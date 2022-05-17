@@ -1,0 +1,14 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+newsegmentation/newsegmentation.egg-info/PKG-INFO
+newsegmentation/newsegmentation.egg-info/SOURCES.txt
+newsegmentation/newsegmentation.egg-info/dependency_links.txt
+newsegmentation/newsegmentation.egg-info/top_level.txt
+tests/eqp.png
+tests/model.png
+tests/mtx.png
+tests/perf.png
+tests/tree.png
