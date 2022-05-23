@@ -149,17 +149,15 @@ You can also find information inside the news using the method whereis():
 
 If you can create a tree from any ground truth database, this package also has a method por evaluation:
     
-*   First, you have to import a custom ground truth / golden data tree with _gtreader_:
-
+* First, you have to import a custom ground truth / golden data tree with _gtreader_:
 
     >>> from newsegmentation import gtreader
     >>> myGt = gtreader('path.txt')
     
 * Then evaluate the news with the reference, use the argument show=True to plot some graphics about the evaluation:
 
-
     >>> myNews.evaluate(myGt, show=True)
-
+  
 ![Evaluation](./tests/evaluation.png)
 
 ### Custom Algorithms:
