@@ -58,10 +58,16 @@ def pbmm(r, param):
                     cb_mean_back = r[init_cb][init_cb - 1] if init_cb > 0 else -1
                     if cb_mean_back < cbt:
                         aux = d.pop(-1)
-                        d.append(d[-1] + 1)
+                        if d:
+                            d.append(d[-1] + 1)
+                        else:
+                            d.append(1)
                         d.append(aux)
                     else:
-                        d[-2] += 1
+                        if d:
+                            d[-2] += 1
+                        else:
+                            d.append(1)
     # Last element:
     d.append(current_index)
     return d
@@ -70,7 +76,7 @@ def pbmm(r, param):
 def fbbcm(lm, s, t, param):
     th = param[0]
     popping = [-1]
-    this_s = s
+    this_s = s.copy()
     this_t = t
     r = []
     while popping:
@@ -84,9 +90,9 @@ def fbbcm(lm, s, t, param):
         popping = []
         for nidx, idx in enumerate(indexing):
             if indexing[idx] == nidx and nidx > idx != -1:
-                this_s[nidx] = f'{this_s[nidx]}. {this_s[indexing[idx]]}'
-                this_t[nidx] += this_t[indexing[idx]]
-                popping.append(indexing[idx])
+                this_s[idx] = f'{this_s[idx]}. {this_s[nidx]}'
+                this_t[idx] += this_t[indexing[idx]]
+                popping.append(nidx)
 
         popping.sort(reverse=True)
         for popp in popping:

@@ -7,11 +7,12 @@
 # Import statements:
 from ._algorithms import fbbcm as default_lcm
 from ._algorithms import pbmm as default_sdm
-from ._slm import slm as default_slm
-from ._databasetrans import default_dbt
 from ._architecture import NewsSegmentation
+from ._databasetrans import default_dbt
+from ._slm import slm as default_slm
 from ._structures import Leaf
 from ._structures import TreeStructure
+from ._gtreader import gtreader
 
 
 def info():

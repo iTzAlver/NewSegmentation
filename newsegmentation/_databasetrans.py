@@ -62,10 +62,10 @@ def __get_text(route, translate=False, tmodel='google', time_limit='00:05:00'):
 	else:
 		traduction_splt = ['No translated.']
 
-	if not len(splitted) == len(traduction_splt):
-		print(
-			f'Length of traduction is not the same as original: {len(splitted)} != {len(traduction_splt)} '
-			f'for route: {route}')
+	# if not len(splitted) == len(traduction_splt):
+	# 	print(
+	# 		f'Length of traduction is not the same as original: {len(splitted)} != {len(traduction_splt)} '
+	# 		f'for route: {route}')
 
 	return [splitted, traduction_splt, diffs]
 

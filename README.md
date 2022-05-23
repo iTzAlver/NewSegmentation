@@ -1,4 +1,4 @@
-# News Segmentation Package
+# News Segmentation Package - 0.1.5
 
 This package takes subtitle VTT files (Video Text Track files) and extracts the piece of 
 news from the whole newscast inside the file. News are stored into a Tree structure with useful NLP features inside. 
@@ -80,6 +80,7 @@ If any error ocurred, try installing the requirements before the installation:
     googletrans
     sentence_transformers
     sklearn    
+    nltk
 
 ### Basic Usage:
 
@@ -131,6 +132,36 @@ In this demo, we extract the news inside the first 5 minutes of the VTT file:
 
     >>> myNews.plotmtx()
 ![matrix](./tests/mtx.png)
+
+### Finding news from text:
+
+You can also find information inside the news using the method whereis():
+    
+    >>> myNews.whereis('Nadal')
+
+    [7]
+
+    >>> myNews.whereis('2')
+
+    [0, 1, 3, 6]
+
+### Evaluate performance:
+
+If you can create a tree from any ground truth database, this package also has a method por evaluation:
+    
+*   First, you have to import a custom ground truth / golden data tree with _gtreader_:
+
+
+    >>> from newsegmentation import gtreader
+    >>> myGt = gtreader('path.txt')
+    
+* Then evaluate the news with the reference, use the argument show=True to plot some graphics about the evaluation:
+
+
+    >>> myNews.evaluate(myGt, show=True)
+
+![Evaluation](./tests/evaluation.png)
+
 ### Custom Algorithms:
 
 Implement the abstract class NewSegmentation for implementing custom algorithms, use this demo as a template:

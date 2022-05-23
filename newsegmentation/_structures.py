@@ -9,7 +9,7 @@ import numpy as np
 
 class Leaf:
     def __init__(self, *args):
-        if len(args) != 2:
+        if len(args) != 3:
             raise ValueError("Error while building a Leaf, wrong number of parameters.")
         if not isinstance(args[0], int):
             raise ValueError("Error while building a Leaf, first argument must be an int.")
@@ -17,8 +17,11 @@ class Leaf:
             raise ValueError("Warning, wrong ID argument while building a Leaf.")
         if not isinstance(args[1], str):
             raise ValueError("Error while building a Leaf, second parameter is not a string.")
+        if not isinstance(args[2], (np.ndarray, tuple, list)):
+            raise ValueError("Error while building a Leaf, third parameter is not a numpy array, tuple or list.")
         self.ID = args[0]
         self.Payload = args[1]
+        self.embedding = args[2]
 
     def __iter__(self):
         self._scon = False
@@ -44,12 +47,12 @@ class Leaf:
 class TreeStructure:
     def __init__(self, *args, **kwargs):
         for tuple_ in args:
-            if not isinstance(tuple_, tuple):
+            if not isinstance(tuple_, (tuple, list)):
                 raise Exception("Error while building a TreeStructure: arguments must be a group of tuples.")
-            if len(tuple_) != 2:
-                raise Exception("Error while building a TreeStructure: parameters in tuples must contain 2 "
-                                "elements: (ID, Payload)")
-        self.Leafs = [Leaf(ID, payload) for ID, payload in args]
+            if len(tuple_) != 3:
+                raise Exception(f'Error while building a TreeStructure: parameters in tuples must contain 3 '
+                                f'elements: (ID, Payload, Embedding), {len(tuple_)} given.')
+        self.Leafs = [Leaf(ID, payload, embedding) for ID, payload, embedding in args]
         self.ID = None
         self.Payload = None
         self.Embedding = None

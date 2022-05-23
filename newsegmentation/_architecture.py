@@ -6,12 +6,16 @@
 # - x - x - x - x - x - x - x - x - x - x - x - x - x - x - #
 # Import statements:
 import os
-import matplotlib.pyplot as plt
 from abc import abstractmethod
+
+import matplotlib.pyplot as plt
 import numpy as np
+from nltk.metrics.segmentation import windowdiff, pk
 from sklearn.metrics.pairwise import cosine_similarity
+
 from ._structures import TreeStructure
 from ._tdm import ftdm
+
 temporalfile = r'./temporalfile.txt'
 
 
@@ -69,6 +73,8 @@ class NewsSegmentation:
         self.t.append(t)
         # Tree transformation:
         self.__treefication()
+        self.performance = {}
+        self.NewsReference = None
         os.remove(temporalfile)
 
     def __database_transformation(self, path):
@@ -93,6 +99,12 @@ class NewsSegmentation:
                         line = _line
                     s.append(line.strip('\n'))
                 linenumber += 1
+
+        for index, sentence in enumerate(s):
+            if sentence[-1] == ' ':
+                s[index] = sentence[:-1]
+            if sentence[0] == ' ':
+                s[index] = sentence[1:]
         return p, s, t
 
     def __specific_language_model(self, s) -> np.array:
@@ -122,6 +134,8 @@ class NewsSegmentation:
                 rp[nr][nc] = element + self.parameters['gpa'][1] * (gpa - element)
         # SDM algorithm:
         self._directives = self._spatial_manager(rp, self.parameters['sdm'])
+        if not self._directives:
+            self._directives = list(range(1, len(rp)))
         # Merge components:
         s2 = []
         t2 = []
@@ -137,9 +151,9 @@ class NewsSegmentation:
             else:
                 _s = f'{_s}. {phrase}'
                 _t += t[pos]
-        s2[0] = s2[0][2:]
         s2.append(_s)
         t2.append(_t)
+        s2[0] = s2[0][2:]
         return rp, s2, np.array(t2)
 
     def __later_correlation_manager(self, s, t):
@@ -155,7 +169,7 @@ class NewsSegmentation:
             cembedding = []
             for leaf_id, initial in enumerate(initial_s):
                 if initial in payload:
-                    leafs.append((leaf_id, initial))
+                    leafs.append((leaf_id, initial, self._initial_efficientembedding[leaf_id]))
                     cembedding.append(self._initial_efficientembedding[leaf_id])
             tree = TreeStructure(*tuple(leafs), ID=treeid, embedding=self._efficientembedding[treeid], payload=payload,
                                  time=tinfo[treeid], reference=self.reference, CP=self.__cpcalc(cembedding))
@@ -213,47 +227,242 @@ class NewsSegmentation:
         else:
             raise StopIteration
 
+    def __len__(self):
+        return len(self.News)
+
+    def __bool__(self):
+        for news in self.News:
+            if not news.isValid:
+                return False
+        return True
+
+    def __add__(self, other):
+        if isinstance(other, TreeStructure):
+            if other.isValid:
+                self.News.append(other)
+
     def plotmtx(self, *args, color='orange'):
         if color not in ['orange', 'black']:
             print(f'Warning: Color: {color} not defined. Orange chosen.')
             color = 'orange'
         if len(args) == 0:
-            pass
+            args_ = (0, 1, 2, 3)
         else:
-            marks = len(self.R)
-            _, subfigs = plt.subplots(ncols=marks)
-            for nfig, num in enumerate(args):
-                num = 3 if num > 3 else num
-                pltmtx = self.R[num]
-                thematrix = np.zeros((len(pltmtx), len(pltmtx), 3), dtype=np.uint8)
-                nra = 100 if color == 'orange' else 255
-                wxf = 1 if num == 3 else 0
-                wxp = 1 if num == 2 else 0
-                wxb = 0 if color == 'orange' else 255
-                bluecore = 150 if color == 'orange' else -150
-                for nrow, row in enumerate(pltmtx):
-                    xrow = row.copy()
+            args_ = args
+        marks = len(args_)
+        _, subfigs = plt.subplots(ncols=marks)
+        for nfig, num in enumerate(args_):
+            num = 3 if num > 3 else num
+            pltmtx = self.R[num]
+            thematrix = np.zeros((len(pltmtx), len(pltmtx), 3), dtype=np.uint8)
+            nra = 100 if color == 'orange' else 255
+            wxf = 1 if num == 3 else 0
+            wxp = 1 if num == 2 else 0
+            wxb = 0 if color == 'orange' else 255
+            bluecore = 150 if color == 'orange' else -150
+            for nrow, row in enumerate(pltmtx):
+                xrow = row.copy()
+                if len(xrow) > 1:
                     mrow = (xrow.sort(), xrow[-2])[1]
-                    for ncol, element in enumerate(row):
-                        thematrix[nrow][ncol][0] = [element * 255 if element > 0 else 0][0]
-                        thematrix[nrow][ncol][1] = [element * nra if element > 0 else 0][0]
-                        thematrix[nrow][ncol][2] = [element * wxb if element > 0 else 0][0]
-                        if element == mrow and wxf:
-                            thematrix[nrow][ncol][2] += 100
-                if wxp:
-                    thesegmentation = [0]
-                    thesegmentation.extend(self._directives)
-                    for idx, segment in enumerate(self._directives):
-                        base = thesegmentation[idx]
-                        ending = segment - 1
-                        for index1 in range(ending - base + 1):
-                            for index2 in range(ending - base + 1):
-                                thematrix[base + index2][base + index1][2] += bluecore
-                # subfigs[nfig].figure(figsize=(4.85, 4.3), dpi=75)
-                subfigs[nfig].imshow(thematrix)
-                subfigs[nfig].set_title(f'R{num}')
-            plt.show()
+                else:
+                    mrow = None
+                for ncol, element in enumerate(row):
+                    thematrix[nrow][ncol][0] = [element * 255 if element > 0 else 0][0]
+                    thematrix[nrow][ncol][1] = [element * nra if element > 0 else 0][0]
+                    thematrix[nrow][ncol][2] = [element * wxb if element > 0 else 0][0]
+                    if element == mrow and wxf:
+                        thematrix[nrow][ncol][2] += 100
+            if wxp:
+                thesegmentation = [0]
+                thesegmentation.extend(self._directives)
+                for idx, segment in enumerate(self._directives):
+                    base = thesegmentation[idx]
+                    ending = segment - 1
+                    for index1 in range(ending - base + 1):
+                        for index2 in range(ending - base + 1):
+                            thematrix[base + index2][base + index1][2] += bluecore
+            subfigs[nfig].imshow(thematrix)
+            subfigs[nfig].set_title(f'R{num}')
+        plt.show()
         return 0
+
+    @staticmethod
+    def _whereis(sentence, trees):
+        for tree in trees:
+            if sentence in tree.Payload:
+                return tree.ID
+        raise ZeroDivisionError(f'Sentence "{sentence}" not in tree, something is working wrong...')
+
+    def whereis(self, sentence):
+        if self.News:
+            for tree in self.News:
+                if sentence in tree.Payload:
+                    return tree.ID
+            raise None
+        else:
+            raise ValueError('Error while searching a sentence in the trees. Trees are not valid, try rebuilding '
+                             'the object again.')
+
+    def evaluate(self, reference_trees, show=False):
+        results = {'Precision': 0, 'Recall': 0, 'F1': 0, 'WD': 0}
+        trees = self.News
+        confusion_matrix = np.zeros((len(reference_trees), len(trees)))
+        for ngt, gt in enumerate(reference_trees):
+            for ntr, tree in enumerate(trees):
+                for leaf in tree:
+                    confusion_matrix[ngt][ntr] += len(leaf.Payload.split(' ')) if leaf.Payload in gt.Payload else 0
+
+        pertenence = []
+        tp = 0
+        fp = 0
+        for row in np.transpose(confusion_matrix):
+            indexmax = np.argmax(row)
+            pertenence.append(indexmax)
+            tp += max(row)
+            fp += sum(row) - max(row)
+
+        fn = sum([sum(col) - max(col) for col in confusion_matrix])
+
+        results['Precision'] = tp / (tp + fp)
+        results['Recall'] = tp / (tp + fn)
+        results['F1'] = 2 * results['Precision'] * results['Recall'] / (results['Precision'] + results['Recall'])
+
+        s_res = []
+        s_ref = []
+        for _ in self.s[0]:
+            s_res.append(0)
+            s_ref.append(0)
+
+        original = self.s[0]
+        last_ref = 0
+        last_res = 0
+        for index, sentence in enumerate(original):
+            ntree_res = self._whereis(sentence, self.News)
+            ntree_ref = self._whereis(sentence, reference_trees)
+            if ntree_res != last_res:
+                last_res = ntree_res
+                s_res[index] = 1
+            if ntree_ref != last_ref:
+                last_ref = ntree_ref
+                s_ref[index] = 1
+
+        s_res_s = ''
+        for item in s_res:
+            if item:
+                s_res_s = f'{s_res_s}1'
+            else:
+                s_res_s = f'{s_res_s}0'
+        s_ref_s = ''
+        for item in s_ref:
+            if item:
+                s_ref_s = f'{s_ref_s}1'
+            else:
+                s_ref_s = f'{s_ref_s}0'
+
+        k = round(0.5 * len(s_res) / (1 + sum(s_ref)))
+        results['WD'] = windowdiff(s_ref_s, s_res_s, k)
+        results['Pk'] = pk(s_ref_s, s_res_s, k)
+
+        if show:
+            # _, subfigs = plt.subplots(ncols=2, nrows=2)
+            fig = plt.figure()
+            gs = fig.add_gridspec(6, 2)
+            subfigs = list()
+            subfigs.append(fig.add_subplot(gs[0:2, 0]))
+            subfigs.append(fig.add_subplot(gs[0:2, 1]))
+            subfigs.append(fig.add_subplot(gs[3, 0:2]))
+            subfigs.append(fig.add_subplot(gs[5:7, 0:2]))
+
+            pltmtx = self.R[2]
+            thematrix = np.zeros((len(pltmtx), len(pltmtx), 3), dtype=np.uint8)
+            for nrow, row in enumerate(pltmtx):
+                for ncol, element in enumerate(row):
+                    thematrix[nrow][ncol][0] = [element * 255 if element > 0 else 0][0]
+                    thematrix[nrow][ncol][1] = [element * 100 if element > 0 else 0][0]
+                    thematrix[nrow][ncol][2] = [element * 000 if element > 0 else 0][0]
+            thematrix2 = thematrix.copy()
+            thesegmentation = [0]
+            thesegmentation.extend(self._directives)
+
+            for idx, segment in enumerate(self._directives):
+                base = thesegmentation[idx]
+                ending = segment - 1
+                for index1 in range(ending - base + 1):
+                    for index2 in range(ending - base + 1):
+                        thematrix[base + index2][base + index1][2] += 150
+
+            subfigs[0].imshow(thematrix)
+            subfigs[0].set_title(f'Performed segmentation.')
+            subfigs[0].set_xlabel('Sentence index')
+            subfigs[0].set_ylabel('Sentence index')
+
+            thesegmentation = [0]
+            _directives = []
+            for index, element in enumerate(s_ref):
+                if element:
+                    _directives.append(index)
+            _directives.append(len(s_ref))
+            thesegmentation.extend(_directives)
+            for idx, segment in enumerate(_directives):
+                base = thesegmentation[idx]
+                ending = segment - 1
+                for index1 in range(ending - base + 1):
+                    for index2 in range(ending - base + 1):
+                        thematrix2[base + index2][base + index1][2] += 150
+            subfigs[1].imshow(thematrix2)
+            subfigs[1].set_title(f'Correct segmentation.')
+            subfigs[1].set_xlabel('Sentence index')
+            subfigs[1].set_ylabel('Sentence index')
+
+            mtwd = np.zeros((2, len(s_res), 3), dtype=np.uint8)
+            for i in range(3):
+                mtwd[0, :, i] = 255 * np.array(s_res)
+                mtwd[1, :, i] = 255 * np.array(s_ref)
+            subfigs[2].imshow(mtwd)
+            subfigs[2].set_title('Segmentation boundaries.')
+            subfigs[2].set_xlabel('Sentence index')
+            subfigs[2].set_yticks(np.array([0, 1]), labels=['Reference', 'Performed'])
+
+            mtreep = np.zeros((max(len(self.News), len(reference_trees)), len(original), 3), dtype=np.uint8)
+            for ns, sentence in enumerate(original):
+                for tree in self.News:
+                    if sentence in tree.Payload:
+                        mtreep[tree.ID, ns, 0] = 255
+
+                for tree in reference_trees:
+                    if sentence in tree.Payload:
+                        mtreep[tree.ID, ns, 2] = 255
+
+            subfigs[3].imshow(mtreep)
+            subfigs[3].set_title('Sentence pertenence.')
+            subfigs[3].set_xlabel('Sentence index')
+            subfigs[3].set_ylabel('Tree ID')
+            plt.show()
+        self.performance = results
+        self.NewsReference = reference_trees
+        return results
+
+    @staticmethod
+    def info():
+        __text = 'News segmentation package:\n--------------------------------------------\nFAST USAGE:\n' \
+                 '--------------------------------------------\nPATH_TO_MY_FILE = < PAHT >\n' \
+                 'import newsegmentation as ns\nnews = ns.NewsSegmentation(PATH_TO_MY_FILE)\n' \
+                 'for pon in news:\n' \
+                 '\tprint(pon)\n' \
+                 '--------------------------------------------\n'
+        print(__text)
+        return __text
+
+    @staticmethod
+    def about():
+        __text = 'Institution:\n------------------------------------------------------\n' \
+                 'Universidad de Alcalá.\nEscuela Politécnica Superior.\n' \
+                 'Departamento de Teoría De la Señal y Comunicaciones.\nCátedra ISDEFE.\n' \
+                 '------------------------------------------------------\n' \
+                 'Author: Alberto Palomo Alonso\n' \
+                 '------------------------------------------------------\n'
+        print(__text)
+        return __text
 # - x - x - x - x - x - x - x - x - x - x - x - x - x - x - #
 #                        END OF FILE                        #
 # - x - x - x - x - x - x - x - x - x - x - x - x - x - x - #
