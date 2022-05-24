@@ -1,4 +1,4 @@
-# News Segmentation Package - 0.1.5
+# News Segmentation Package - 0.2.3
 
 This package takes subtitle VTT files (Video Text Track files) and extracts the piece of 
 news from the whole newscast inside the file. News are stored into a Tree structure with useful NLP features inside. 
