@@ -1,4 +1,4 @@
-# News Segmentation Package - 0.2.3
+# News Segmentation Package - 0.2.4
 
 This package takes subtitle VTT files (Video Text Track files) and extracts the piece of 
 news from the whole newscast inside the file. News are stored into a Tree structure with useful NLP features inside. 
@@ -71,15 +71,15 @@ transformer according to the file and language used. Spanish news segmentation i
 
 You can install the package via pip:
 
-    pip install newsegmentation
+    pip install newsegmentation -r requirements.txt
 
 If any error ocurred, try installing the requirements before the installation:
 
     numpy
     matplotlib
-    googletrans
-    sentence_transformers
-    sklearn    
+    googletrans == 4.0.0rc1
+    sentence_transformers >= 2.2.0
+    sklearn
     nltk
 
 ### Basic Usage:
@@ -151,10 +151,14 @@ If you can create a tree from any ground truth database, this package also has a
     
 * First, you have to import a custom ground truth / golden data tree with _gtreader_:
 
+ 
+
     >>> from newsegmentation import gtreader
     >>> myGt = gtreader('path.txt')
     
 * Then evaluate the news with the reference, use the argument show=True to plot some graphics about the evaluation:
+ 
+
 
     >>> myNews.evaluate(myGt, show=True)
   

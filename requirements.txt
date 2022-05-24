@@ -2,7 +2,5 @@ matplotlib>=3.5.0
 numpy>=1.22.3
 nltk>=3.6.5
 sklearn>=0.0
-sentence-transformers>=2.1.0
+sentence-transformers>=2.2.0
 googletrans==4.0.0rc1
-
-
