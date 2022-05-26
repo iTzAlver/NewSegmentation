@@ -6,6 +6,7 @@
 # - x - x - x - x - x - x - x - x - x - x - x - x - x - x - #
 # Import statements:
 import os
+import json
 from abc import abstractmethod
 
 import matplotlib.pyplot as plt
@@ -16,13 +17,20 @@ from sklearn.metrics.pairwise import cosine_similarity
 from ._structures import TreeStructure
 from ._tdm import ftdm
 from ._dserial import save3s
+from ._gtreader import gtreader
 
 temporalfile = r'./temporalfile.txt'
 
 
 # -----------------------------------------------------------
 class NewsSegmentation:
-    def __init__(self, news_path, tdm=0.3, gpa=(0, 0), sdm=(0.18, 1, 0.18*0.87), lcm=(0.42,), ref=0):
+    def __init__(self, news_path: str,
+                 tdm: float = 0.3,
+                 gpa: tuple = (0, 0),
+                 sdm: tuple = (0.18, 1, 0.18*0.87),
+                 lcm: tuple = (0.42,),
+                 ref: int = 0,
+                 cache_file: str = ''):
         """
         Virtual class: 3 methods must be overriden
         :param tdm: Penalty factor (betta) for Temporal Distance Manager
@@ -46,6 +54,16 @@ class NewsSegmentation:
         self._initial_efficientembedding = []
         self._directives = []
         self._cache = {}
+        self._cache_file = cache_file
+        # Loading cache file if exists:
+        if self._cache_file:
+            if self._cache_file.split('.')[-1] != 'json':
+                self._cache_file = f'{cache_file}.json'
+            if os.path.exists(self._cache_file):
+                with open(self._cache_file, 'r', encoding='utf-8') as file:
+                    _cache = json.load(file)
+                    for key, item in _cache.items():
+                        self._cache[key] = np.array(item)
         # Steps for in the architecture.
         if '.txt' in news_path:
             news_path_txt = news_path
@@ -79,11 +97,11 @@ class NewsSegmentation:
         self.NewsReference = None
         os.remove(temporalfile)
 
-    def __database_transformation(self, path):
+    def __database_transformation(self, path: str):
         return self._database_transformation(path, temporalfile)
 
     @staticmethod
-    def __reader(path):
+    def __reader(path: str):
         s = []
         p = []
         t = []
@@ -109,7 +127,7 @@ class NewsSegmentation:
                 s[index] = sentence[1:]
         return p, s, t
 
-    def __specific_language_model(self, s) -> np.array:
+    def __specific_language_model(self, s: list[str]) -> np.array:
         # Check the cache.
         sx = []
         for sentence in s:
@@ -120,6 +138,13 @@ class NewsSegmentation:
         # Store the embeddings in cache.
         for place, sentence in enumerate(sx):
             self._cache[sentence] = embeddings_[place]
+
+        if self._cache_file:
+            with open(self._cache_file, 'w', encoding='utf-8') as file:
+                _cache = {}
+                for key, item in self._cache.items():
+                    _cache[key] = item.tolist()
+                json.dump(_cache, file)
         # Restore the embeddings.
         embeddings = []
         for sentence in s:
@@ -135,11 +160,11 @@ class NewsSegmentation:
         self._efficientembedding = embeddings
         return r
 
-    def __temporal_manager(self, p, s, t) -> tuple:
+    def __temporal_manager(self, p: (list[int], np.ndarray), s: list[str], t: (list[float], np.ndarray)) -> tuple:
         r0, r1 = ftdm(p, s, self.__specific_language_model, self.parameters["betta_tdm"])
         return r0, r1, s, t
 
-    def __spatial_manager(self, r, s, t):
+    def __spatial_manager(self, r: np.ndarray, s: list[str], t: (list[float], np.ndarray)):
         # GPA sub-module:
         rp = np.zeros((len(r), len(r)))
         for nr, row in enumerate(r):
@@ -173,7 +198,7 @@ class NewsSegmentation:
         s2[0] = s2[0][2:]
         return rp, s2, np.array(t2)
 
-    def __later_correlation_manager(self, s, t):
+    def __later_correlation_manager(self, s: list[str], t: (list[float], np.ndarray)):
         r, s, t = self._later_correlation_manager(self.__specific_language_model, s, t, self.parameters['lcm'])
         return np.array(r), s, np.array(t)
 
@@ -193,7 +218,7 @@ class NewsSegmentation:
             self.News.append(tree)
 
     @staticmethod
-    def __cpcalc(cembedding):
+    def __cpcalc(cembedding: (list, np.ndarray)):
         r = np.zeros((len(cembedding), len(cembedding)))
         for ne1, emb1 in enumerate(cembedding):
             for ne2, emb2 in enumerate(cembedding):
@@ -210,22 +235,22 @@ class NewsSegmentation:
 
     @staticmethod
     @abstractmethod
-    def _spatial_manager(r, param) -> tuple:
+    def _spatial_manager(r: np.ndarray, param: tuple) -> tuple:
         pass
 
     @staticmethod
     @abstractmethod
-    def _later_correlation_manager(lm, s, t, param) -> tuple:
+    def _later_correlation_manager(lm: any, s: list[str], t: (list[float], np.ndarray), param: tuple) -> tuple:
         pass
 
     @staticmethod
     @abstractmethod
-    def _specific_language_model(s) -> np.array:
+    def _specific_language_model(s: list[str]) -> np.array:
         pass
 
     @staticmethod
     @abstractmethod
-    def _database_transformation(path, output):
+    def _database_transformation(path: str, output: str):
         pass
 
     def __repr__(self):
@@ -304,13 +329,13 @@ class NewsSegmentation:
         return self
 
     @staticmethod
-    def _whereis(sentence, trees):
+    def _whereis(sentence: str, trees: list[TreeStructure]):
         for tree in trees:
             if sentence in tree.Payload:
                 return tree.ID
         raise ZeroDivisionError(f'Sentence "{sentence}" not in tree, something is working wrong...')
 
-    def whereis(self, sentence):
+    def whereis(self, sentence: str):
         if self.News:
             for tree in self.News:
                 if sentence in tree.Payload:
@@ -320,7 +345,32 @@ class NewsSegmentation:
             raise ValueError('Error while searching a sentence in the trees. Trees are not valid, try rebuilding '
                              'the object again.')
 
-    def evaluate(self, reference_trees, show=False):
+    def evaluate(self, reference_trees_: (list[TreeStructure], str), show: bool = False, integrity_check: bool = True):
+        # Initial checks:
+        if isinstance(reference_trees_, str):
+            reference_trees = gtreader(reference_trees_)
+        elif isinstance(reference_trees_, list):
+            reference_trees = reference_trees_
+        else:
+            raise ValueError('Argument must be a list of trees or path to a GT file.')
+
+        if integrity_check:
+            pl1 = self.s[0]
+            pl2 = []
+            for tree in reference_trees:
+                for leaf in tree:
+                    pl2.append(leaf.Payload)
+
+            for sentence in pl1:
+                if sentence not in pl2:
+                    raise ValueError(f'Integrity validation for evaluation failed:\nOriginal sentence: '
+                                     f'"{sentence}" not in reference tree.')
+            for sentence in pl2:
+                if sentence not in pl1:
+                    raise ValueError(f'Integrity validation for evaluation failed:\nReference sentence: '
+                                     f'"{sentence}" not in original sentences.')
+
+        # Evaluation:
         results = {'Precision': 0, 'Recall': 0, 'F1': 0, 'WD': 0}
         trees = self.News
         confusion_matrix = np.zeros((len(reference_trees), len(trees)))
@@ -481,7 +531,7 @@ class NewsSegmentation:
         print(__text)
         return __text
 
-    def save(self, path):
+    def save(self, path: str):
         save3s(self.News, path)
         return self
 # - x - x - x - x - x - x - x - x - x - x - x - x - x - x - #

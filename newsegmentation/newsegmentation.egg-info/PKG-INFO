@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: newsegmentation
-Version: 0.2.8
+Version: 0.2.9
 Summary: Package for news segmentation architecture.
 Home-page: https://github.com/iTzAlver/newsegmentation
 Author: Alberto Palomo Alonso
@@ -15,7 +15,7 @@ License-File: LICENSE
 
 ![Logo](./tests/logo.png)
 
-# News Segmentation Package - 0.2.8
+# News Segmentation Package - 0.2.9
 
 This package takes subtitle VTT files (Video Text Track files) and extracts the piece of 
 news from the whole newscast inside the file. News are stored into a Tree structure with useful NLP features inside. 
@@ -55,6 +55,17 @@ Cátedra ISDEFE.
 ### 0.2.6 - 0.2.8
 1. Documentation bug fixing.
 2. Logo added.
+
+### 0.2.9
+1. `Segmentation.evaluate()` now can take a path as a parameter!
+2. `Segmentation.evaluate(integrity_validation=True)` now takes as default parameter `integrity_validation=True` 
+for integrity validation.
+> NOTE: If your custom algorithm removes sentences from the original text, you should call 
+> ``integrity_validation=False`` as it checks every that every sentence is in each tree.
+3. Programmed external cache file in ``Segmentation`` class taking a cache file as a new parameter: 
+``Segmentation(cache_file='./myjson.json')``. This speeds up the architecture when the sentences sent to the ``LCM`` are the same. 
+For instance, when testing parameters in the same database the process is around 1000% faster.
+4. Bug fix: ``'.'`` not inserted when constructing payload from leafs.
 
 ## Architecture
 
@@ -220,6 +231,37 @@ This package defines a data strcuture called news trees, this format is parsed b
     {'Precision': 1.0, 'Recall': 1.0, 'F1': 1.0, 'WD': 0.0, 'Pk': 0.0}
 
 This saves the trees generated (not the ``Segmentation`` instance) inside a ``.3s`` file given as a parameter. 
+
+### Speeding up process:
+If you want to run the same database several times (for algorithm design, parameter testing or other reasons) you should
+use the cache serialization system. This system stores into a ``.json`` file all the embeddings generated in the ``SLM``. 
+If any sentence is repeated, the system will not compute the embeddings again. All sentences computed in the ``SLM`` are 
+stored into the ``cache_file`` if provided. Here is an example of speeding up process:
+
+      >>> import time
+      >>>
+      >>> myDatabase = ['./1.vtt', './2.vtt', './3.vtt']
+      >>> cache_file = './cache.json'
+      >>> lcm_parameters = [0.2, 0.3, 0.4, 0.5, 0.6, 0.7]
+      >>> ellapsed_time = list()
+      >>>
+      >>> for parameter in lcm_parameters:
+      >>>   initial_time = time.perf_counter()
+      >>>   for news in database:
+      >>>      myNews = ns.Segmentation(news, lcm=(parameter,), cache_file=cache_file)
+      >>>   ellapsed_time.append(time.perf_counter() - initial_time)
+      >>>
+      >>>   [print(f'{i + 1} iteration: {seconds} seconds.') for i, seconds in enumerate(ellapsed_time)]
+
+      1: iteration 89.23 seconds.
+      2: iteration 9.28 seconds.
+      3: iteration 8.91 seconds.
+      4: iteration 12.2 seconds.
+      5: iteration 7.22 seconds.
+      6: iteration 13.9 seconds.
+
+   
+
 ### Custom Algorithms:
 
 Implement the abstract class ``NewSegmentation`` for implementing custom algorithms, use this demo as a template:

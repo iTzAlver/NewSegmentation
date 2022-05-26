@@ -105,15 +105,15 @@ class TreeStructure:
             for leaf in self.Leafs:
                 for _, payload in leaf:
                     if self.Payload != '':
-                        self.Payload = f'{self.Payload} {payload}'
+                        self.Payload = f'{self.Payload}. {payload}'
                     else:
                         self.Payload = f'{payload}'
 
-        if self.ID is None or self.Payload == '' or self.Time is None:
+        if self.ID is None or self.Payload == '':
             self.isValid = False
         else:
             self.isValid = True
-        if self.Embedding is None or self.CP is None:
+        if self.Embedding is None or self.CP is None or self.Time is None:
             self.isComplete = False
         else:
             self.isComplete = True
