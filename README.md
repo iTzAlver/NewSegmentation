@@ -1,4 +1,4 @@
-# News Segmentation Package - 0.2.6
+# News Segmentation Package - 0.2.7
 
 This package takes subtitle VTT files (Video Text Track files) and extracts the piece of 
 news from the whole newscast inside the file. News are stored into a Tree structure with useful NLP features inside. 
@@ -35,7 +35,7 @@ Cátedra ISDEFE.
    1. Method ``save()`` implemented in Segmentation class.
    2. Function ``load3s`` implemented for reading trees from files.
 
-### 0.2.6
+### 0.2.6 - 0.2.7
 1. Documentation bug fixing.
 
 ## Architecture
@@ -65,9 +65,9 @@ consecutive pieces of text and merges it.
 high semantical correlation between separate pieces of text and merges it.
 
 The user can implement their own algorithms depending on their application.\
-\
-![Model architecture](\https://github.com/iTzAlver/newsegmentation/blob/master/tests/model.png?raw=true)
-\https://github.com/iTzAlver/newsegmentation/blob/master/tests/model.png?raw=true
+
+![Model architecture](./tests/model.png)
+
 The results are stored into a Tree structure with different fields representing different features from 
 the piece of news.
 * **Payload**: defines the whole text of the piece of news, it involves all sentences related to a same piece of news combined into a single piece of text. It can be defined as a text structure.
@@ -77,14 +77,18 @@ the piece of news.
 * **Correlation power (CP)**: it is a real number indicating how correlated the sentences of the leafs are within the tree. This number can become very interesting when studying the reliability of algorithms. It can be defined as a real positive number.
 Where M is the size of R1+K and R is, in our architecture, the very last output matrix R1+K. This function does not take into account the main diagonal of the correlation matrix as it does not provide any information about the correlation between sentences. The correlation power is defined on the (0, 1) interval, meaning 0 no correlation between any sentence in the tree and 1 meaning absolute correlation between all the sentences within the tree. This measurement helps to evaluate the reliability of the model.
 
+<p align="center">
+    <img src="./tests/eqp.png">
 
-![Equation cp](https://github.com/iTzAlver/newsegmentation/tree/master/tests/eqp.png)
+
 
 
 * **Reference**: when several trees share the same results storage system, it is convenient to define a group of trees which make reference to a group. For example, if an analysis for several days when some piece of news can be repeated and those trees are lately merged into a subsequent tree, it is convenient to reference the day those trees belongs to. It can be done by its reference field, and it can be defined as a natural number. 
 * **Leafs**: this structure stores information about the initial state of the model. Each leaf stores a unique _ID_ value and a _Payload_ value containing the minimum text size element considered; in this architecture this element is a sentence, but a single word or any group of words could be also considered.
 
-![TreeStructure](https://github.com/iTzAlver/newsegmentation/tree/master/tests/tree.png)
+<p align="center">
+    <img src="./tests/tree.png">
+
 
 ## Usage
 
@@ -156,7 +160,7 @@ In this demo, we extract the news inside the first 5 minutes of the ``VTT`` file
     Y en los deportes Nadal gana en Australia, Sergio
 
     >>> myNews.plotmtx()
-![matrix](https://github.com/iTzAlver/newsegmentation/tree/master/tests/mtx.png)
+![matrix](./tests/mtx.png)
 
 ### Finding news from text:
 
@@ -183,7 +187,7 @@ Then evaluate the news with the reference, use the argument ``evaluate(ref, show
 
     >>> myNews.evaluate(myGt, show=True)
   
-![Evaluation](https://github.com/iTzAlver/newsegmentation/tree/master/tests/evaluation.png)
+![Evaluation](./tests/evaluation.png)
 
 
 ### Save and load trees:
@@ -242,7 +246,7 @@ Note that the architecture creates temporary TXT files for reading the news from
 Comparing two different algorithms inside the architecture. LGA is a kernel-based algorithm with cellular automation techniques. PBMM algorithm is 
 the default algorithm and has better F1 score performance and reliability. This is tested over a Spanish news boradcast database with 10 files.
 
-![Performance](https://github.com/iTzAlver/newsegmentation/tree/master/tests/perf.png)
+![Performance](./tests/perf.png)
 
 ### Cite as:
 ~~~
