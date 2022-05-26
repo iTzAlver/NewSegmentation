@@ -9,6 +9,7 @@ newsegmentation/newsegmentation.egg-info/dependency_links.txt
 newsegmentation/newsegmentation.egg-info/top_level.txt
 tests/eqp.png
 tests/evaluation.png
+tests/logo.png
 tests/model.png
 tests/mtx.png
 tests/perf.png
