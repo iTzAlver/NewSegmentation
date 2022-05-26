@@ -66,8 +66,8 @@ high semantical correlation between separate pieces of text and merges it.
 
 The user can implement their own algorithms depending on their application.\
 \
-![Model architecture](https://github.com/iTzAlver/newsegmentation/tree/master/tests/model.png)
-\
+![Model architecture](\https://github.com/iTzAlver/newsegmentation/blob/master/tests/model.png?raw=true)
+\https://github.com/iTzAlver/newsegmentation/blob/master/tests/model.png?raw=true
 The results are stored into a Tree structure with different fields representing different features from 
 the piece of news.
 * **Payload**: defines the whole text of the piece of news, it involves all sentences related to a same piece of news combined into a single piece of text. It can be defined as a text structure.

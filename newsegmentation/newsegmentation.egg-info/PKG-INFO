@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: newsegmentation
-Version: 0.2.5
+Version: 0.2.6
 Summary: Package for news segmentation architecture.
 Home-page: https://github.com/iTzAlver/newsegmentation
 Author: Alberto Palomo Alonso
@@ -13,7 +13,7 @@ Requires-Python: >=3.6
 Description-Content-Type: text/markdown
 License-File: LICENSE
 
-# News Segmentation Package - 0.2.5
+# News Segmentation Package - 0.2.6
 
 This package takes subtitle VTT files (Video Text Track files) and extracts the piece of 
 news from the whole newscast inside the file. News are stored into a Tree structure with useful NLP features inside. 
@@ -31,24 +31,27 @@ Cátedra ISDEFE.
 ## What's new?
 
 ### < 0.2.4
-1. NewSegmentation abstract class for custom algorithms.
+1. `NewSegmentation` abstract class for custom algorithms.
 2. Architecture implemented.
-3. Segmentation class for default modules.
+3. `Segmentation` class for default modules.
 4. Precision, Recall, F1, WD, Pk score evaluation for trees.
-5. plot_matrix() method for the matrix generated.
-6. where_is() method for finding pieces of news.
-7. gtreader() for reading reference trees for evaulation in specific format.
-8. Tree and leaf structures.
-9. Default PBMM and FB-BCM algorithms.
-10. Default TDM, DBM, SDM implemented.
-11. GPA implemented inside SDM.
+5. ``plot_matrix()`` method for the matrix generated.
+6. ``where_is()`` method for finding pieces of news.
+7. ``gtreader()`` for reading reference trees for evaulation in specific format.
+8. ``Tree`` and ``Leaf`` structures.
+9. Default ``PBMM`` and ``FB-BCM`` algorithms.
+10. Default ``TDM``, ``DBM``, ``SDM`` implemented.
+11. ``GPA`` implemented inside ``SDM``.
 
 ### 0.2.5
 1. Code speed up (60% faster).
    1. Implemented cache for embeddings.
 2. Data serializer implemented.
-   1. Method save() implemented in Segmentation class.
-   2. Function load3s implemented for reading trees from files.
+   1. Method ``save()`` implemented in Segmentation class.
+   2. Function ``load3s`` implemented for reading trees from files.
+
+### 0.2.6
+1. Documentation bug fixing.
 
 ## Architecture
 
@@ -78,7 +81,7 @@ high semantical correlation between separate pieces of text and merges it.
 
 The user can implement their own algorithms depending on their application.\
 \
-![Model architecture](./tests/model.png)
+![Model architecture](https://github.com/iTzAlver/newsegmentation/tree/master/tests/model.png)
 \
 The results are stored into a Tree structure with different fields representing different features from 
 the piece of news.
@@ -90,17 +93,17 @@ the piece of news.
 Where M is the size of R1+K and R is, in our architecture, the very last output matrix R1+K. This function does not take into account the main diagonal of the correlation matrix as it does not provide any information about the correlation between sentences. The correlation power is defined on the (0, 1) interval, meaning 0 no correlation between any sentence in the tree and 1 meaning absolute correlation between all the sentences within the tree. This measurement helps to evaluate the reliability of the model.
 
 
-![Equation cp](./tests/eqp.png)
+![Equation cp](https://github.com/iTzAlver/newsegmentation/tree/master/tests/eqp.png)
 
 
 * **Reference**: when several trees share the same results storage system, it is convenient to define a group of trees which make reference to a group. For example, if an analysis for several days when some piece of news can be repeated and those trees are lately merged into a subsequent tree, it is convenient to reference the day those trees belongs to. It can be done by its reference field, and it can be defined as a natural number. 
 * **Leafs**: this structure stores information about the initial state of the model. Each leaf stores a unique _ID_ value and a _Payload_ value containing the minimum text size element considered; in this architecture this element is a sentence, but a single word or any group of words could be also considered.
 
-![TreeStructure](./tests/tree.png)
+![TreeStructure](https://github.com/iTzAlver/newsegmentation/tree/master/tests/tree.png)
 
 ## Usage
 
-First, install the python package. After this, you can use your VTT files to get the 
+First, install the python package. After this, you can use your ``VTT`` files to get the 
 news. Any other type of file can be considered, but the user must implement their own database
 transformer according to the file and language used. Spanish news segmentation is the default model.
 
@@ -121,7 +124,7 @@ If any error ocurred, try installing the requirements before the installation:
 
 ### Basic Usage:
 
-In this demo, we extract the news inside the first 5 minutes of the VTT file:
+In this demo, we extract the news inside the first 5 minutes of the ``VTT`` file:
 
     $ python
     >>> import newsegmentation as ns
@@ -168,11 +171,11 @@ In this demo, we extract the news inside the first 5 minutes of the VTT file:
     Y en los deportes Nadal gana en Australia, Sergio
 
     >>> myNews.plotmtx()
-![matrix](./tests/mtx.png)
+![matrix](https://github.com/iTzAlver/newsegmentation/tree/master/tests/mtx.png)
 
 ### Finding news from text:
 
-You can also find information inside the news using the method whereis():
+You can also find information inside the news using the method ``whereis()``:
     
     >>> myNews.whereis('Nadal')
 
@@ -186,16 +189,16 @@ You can also find information inside the news using the method whereis():
 
 If you can create a tree from any ground truth database, this package also has a method por evaluation:
     
-First, you have to import a custom ground truth / golden data tree with _gtreader_:
+First, you have to import a custom ground truth / golden data tree with ``gtreader()``:
 
     >>> from newsegmentation import gtreader
     >>> myGt = gtreader('path.txt')
     
-Then evaluate the news with the reference, use the argument show=True to plot some graphics about the evaluation:
+Then evaluate the news with the reference, use the argument ``evaluate(ref, show=True)`` to plot some graphics about the evaluation:
 
     >>> myNews.evaluate(myGt, show=True)
   
-![Evaluation](./tests/evaluation.png)
+![Evaluation](https://github.com/iTzAlver/newsegmentation/tree/master/tests/evaluation.png)
 
 
 ### Save and load trees:
@@ -209,10 +212,10 @@ This package defines a data strcuture called news trees, this format is parsed b
 
     {'Precision': 1.0, 'Recall': 1.0, 'F1': 1.0, 'WD': 0.0, 'Pk': 0.0}
 
-This saves the trees generated (not the Segmentation instance) inside a .3s file given as a parameter. 
+This saves the trees generated (not the ``Segmentation`` instance) inside a ``.3s`` file given as a parameter. 
 ### Custom Algorithms:
 
-Implement the abstract class NewSegmentation for implementing custom algorithms, use this demo as a template:
+Implement the abstract class ``NewSegmentation`` for implementing custom algorithms, use this demo as a template:
 
     import newsegmentation as ns
 
@@ -237,7 +240,7 @@ Implement the abstract class NewSegmentation for implementing custom algorithms,
             # return ns.default_dbt(path, op)
             return myown_dbt(path, op)
 
-Note that _ns.default_xxx_ is the default manager for the architecture and can be replaced by your own functions. 
+Note that _``ns.default_xxx``_ is the default manager for the architecture and can be replaced by your own functions. 
 Take into account the following constraints before implementing your own module managers:
 
 * SDM: Takes as input the correlation matrix (r) and the algorithm parameters (param). It returns a list of integers 
@@ -254,7 +257,7 @@ Note that the architecture creates temporary TXT files for reading the news from
 Comparing two different algorithms inside the architecture. LGA is a kernel-based algorithm with cellular automation techniques. PBMM algorithm is 
 the default algorithm and has better F1 score performance and reliability. This is tested over a Spanish news boradcast database with 10 files.
 
-![Performance](./tests/perf.png)
+![Performance](https://github.com/iTzAlver/newsegmentation/tree/master/tests/perf.png)
 
 ### Cite as:
 ~~~
