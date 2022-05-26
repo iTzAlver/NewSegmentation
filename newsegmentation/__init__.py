@@ -13,6 +13,7 @@ from ._slm import slm as default_slm
 from ._structures import Leaf
 from ._structures import TreeStructure
 from ._gtreader import gtreader
+from ._dserial import load3s
 
 
 def info():

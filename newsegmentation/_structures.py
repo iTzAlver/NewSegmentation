@@ -67,7 +67,9 @@ class TreeStructure:
 
     def add(self, **kwargs):
         for key, item in kwargs.items():
-            if 'ID' in key:
+            if 'eaf' in key:
+                self.Leafs.append(Leaf(*item))
+            elif 'ID' in key:
                 if isinstance(item, int):
                     self.ID = item
                 else:

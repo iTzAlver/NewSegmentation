@@ -15,6 +15,7 @@ from sklearn.metrics.pairwise import cosine_similarity
 
 from ._structures import TreeStructure
 from ._tdm import ftdm
+from ._dserial import save3s
 
 temporalfile = r'./temporalfile.txt'
 
@@ -44,6 +45,7 @@ class NewsSegmentation:
         self._efficientembedding = []
         self._initial_efficientembedding = []
         self._directives = []
+        self._cache = {}
         # Steps for in the architecture.
         if '.txt' in news_path:
             news_path_txt = news_path
@@ -108,7 +110,22 @@ class NewsSegmentation:
         return p, s, t
 
     def __specific_language_model(self, s) -> np.array:
-        embeddings = self._specific_language_model(s)
+        # Check the cache.
+        sx = []
+        for sentence in s:
+            if sentence not in self._cache:
+                sx.append(sentence)
+        # Get the embeddings.
+        embeddings_ = self._specific_language_model(sx)
+        # Store the embeddings in cache.
+        for place, sentence in enumerate(sx):
+            self._cache[sentence] = embeddings_[place]
+        # Restore the embeddings.
+        embeddings = []
+        for sentence in s:
+            embeddings.append(self._cache[sentence])
+        embeddings = np.array(embeddings)
+        # Get correlation values.
         r = np.zeros((len(s), len(s)))
         for ne1, embedding1 in enumerate(embeddings):
             for ne2, embedding2 in enumerate(embeddings):
@@ -284,7 +301,7 @@ class NewsSegmentation:
             subfigs[nfig].imshow(thematrix)
             subfigs[nfig].set_title(f'R{num}')
         plt.show()
-        return 0
+        return self
 
     @staticmethod
     def _whereis(sentence, trees):
@@ -463,6 +480,10 @@ class NewsSegmentation:
                  '------------------------------------------------------\n'
         print(__text)
         return __text
+
+    def save(self, path):
+        save3s(self.News, path)
+        return self
 # - x - x - x - x - x - x - x - x - x - x - x - x - x - x - #
 #                        END OF FILE                        #
 # - x - x - x - x - x - x - x - x - x - x - x - x - x - x - #
