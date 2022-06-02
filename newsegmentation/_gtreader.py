@@ -26,7 +26,8 @@ def gtreader(path) -> list:
 				id_ = []
 			else:
 				id_.append(nline)
-				payload_.append(line.strip('\n'))
+				line_ = line if line[0] != '$' else line[1:]
+				payload_.append(line_.strip('\n'))
 	return trees
 # -------------------------------------------------------------------#
 #           E   N   D          O   F           F   I   L   E         #
