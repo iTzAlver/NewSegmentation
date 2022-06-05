@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: newsegmentation
-Version: 0.2.9
+Version: 0.3.0
 Summary: Package for news segmentation architecture.
 Home-page: https://github.com/iTzAlver/newsegmentation
 Author: Alberto Palomo Alonso
@@ -15,7 +15,7 @@ License-File: LICENSE
 
 ![Logo](./tests/logo.png)
 
-# News Segmentation Package - 0.2.9
+# News Segmentation Package - 0.3.0
 
 This package takes subtitle VTT files (Video Text Track files) and extracts the piece of 
 news from the whole newscast inside the file. News are stored into a Tree structure with useful NLP features inside. 
@@ -66,6 +66,17 @@ for integrity validation.
 ``Segmentation(cache_file='./myjson.json')``. This speeds up the architecture when the sentences sent to the ``LCM`` are the same. 
 For instance, when testing parameters in the same database the process is around 1000% faster.
 4. Bug fix: ``'.'`` not inserted when constructing payload from leafs.
+
+### 0.3.0
+1. Solved cache bugs.
+2. One read and write in cache per call to the architecture.
+3. Exception handler blockage for cache. Now an exception with cache won't block the architecture.
+4. Best parameters found and set as default.
+5. Preprocessing speed up explanation in doc.
+
+
+
+
 
 ## Architecture
 
@@ -260,7 +271,18 @@ stored into the ``cache_file`` if provided. Here is an example of speeding up pr
       5: iteration 7.22 seconds.
       6: iteration 13.9 seconds.
 
-   
+If any further speed up is needed. The model reads the original files ``(.VTT)`` and stores it as temporal ``.TXT`` files. If the 
+model is reading continously this files, it is better to process the ``.VTT`` files to ``.TXT`` once, store it, and give the model the ``.TXT`` files instead. 
+This skips the first preprocessing step in every iteration. You can do something similar to this:
+
+      >>> in_files = ['./1.vtt', './2.vtt', './3.vtt', './4.vtt', './5.vtt']
+      >>> txt_files = [default_dbt(vtt_file) for vtt_file in in_files]
+      >>> times = 200
+      >>> for i in range(times):
+      >>>   for txt_file in txt_files:
+      >>>      myNews = ns.Segmentation(txt_file)
+
+This method speeds slightly up the process and it is only adecuate if the file is going to be transformed more than once.
 
 ### Custom Algorithms:
 
