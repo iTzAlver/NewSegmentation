@@ -268,7 +268,7 @@ This skips the first preprocessing step in every iteration. You can do something
       >>>   for txt_file in txt_files:
       >>>      myNews = ns.Segmentation(txt_file)
 
-This method speeds slightly up the process and it is only adecuate if the file is going to be transformed more than once.
+This method speeds slightly up the process, and it is only adecuate if the file is going to be transformed more than once.
 
 ### Custom Algorithms:
 
