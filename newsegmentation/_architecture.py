@@ -103,7 +103,9 @@ class NewsSegmentation:
 
         if dump and self._cache_file:
             self._dump_cache()
-        os.remove(temporalfile)
+
+        if os.path.exists(temporalfile):
+            os.remove(temporalfile)
 
     def __database_transformation(self, path: str):
         return self._database_transformation(path, temporalfile)
