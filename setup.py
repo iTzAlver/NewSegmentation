@@ -5,9 +5,11 @@
 #                                                           #
 # - x - x - x - x - x - x - x - x - x - x - x - x - x - x - #
 import setuptools
-
-with open('README.md', 'r', encoding='utf-8') as fh:
-    long_description = fh.read()
+import pathlib
+HERE = pathlib.Path(__file__).parent
+REQUIRES = (HERE / "requirements.txt").read_text().strip().split("\n")
+README = (HERE / "README.md").read_text()
+REQUIRES = [lin.strip() for lin in REQUIRES]
 
 setuptools.setup(
     name='newsegmentation',
@@ -16,7 +18,8 @@ setuptools.setup(
     author_email='a.palomo@uah.es',
     description='Package for news segmentation architecture.',
     keywords='deeplearning, ml, api',
-    long_description=long_description,
+    long_description=README,
+    install_requires=REQUIRES,
     long_description_content_type='text/markdown',
     url='https://github.com/iTzAlver/newsegmentation.git',
     project_urls={

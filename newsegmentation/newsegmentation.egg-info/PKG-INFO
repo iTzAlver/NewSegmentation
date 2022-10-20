@@ -1,21 +1,29 @@
 Metadata-Version: 2.1
 Name: newsegmentation
-Version: 0.3.1
+Version: 0.3.2
 Summary: Package for news segmentation architecture.
-Home-page: https://github.com/iTzAlver/newsegmentation
+Home-page: https://github.com/iTzAlver/newsegmentation.git
 Author: Alberto Palomo Alonso
-Author-email: alberto.palomo@uah.es
-Project-URL: Bug Tracker, https://github.com/iTzAlver/newsegmentation/issues
+Author-email: a.palomo@uah.es
+Project-URL: Documentation, https://github.com/iTzAlver/newsegmentation/blob/master/README.md
+Project-URL: Bug Reports, Bug Tracker = https://github.com/iTzAlver/newsegmentation/issues
+Project-URL: Source Code, https://github.com/iTzAlver/newsegmentation.git
+Keywords: deeplearning,ml,api
+Classifier: Development Status :: 5 - Production/Stable
+Classifier: Intended Audience :: Researchers
+Classifier: Topic :: Software Development :: Build Tools
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
+Classifier: License :: OSI Approved :: Apache License
 Requires-Python: >=3.6
 Description-Content-Type: text/markdown
+Provides-Extra: dev
 License-File: LICENSE
 
 ![Logo](./tests/logo.png)
 
-# News Segmentation Package - 0.3.1
+# News Segmentation Package - 0.3.2
 
 This package takes subtitle VTT files (Video Text Track files) and extracts the piece of 
 news from the whole newscast inside the file. News are stored into a Tree structure with useful NLP features inside. 
@@ -77,6 +85,10 @@ For instance, when testing parameters in the same database the process is around
 ### 0.3.1
 1. Bug fixing with ```.TXT``` input files and cache.
 
+### 0.3.2
+1. Setuptools rework.
+2. Updated performance image.
+3. To continue: Update CITE AS to IEEE ref.
 
 
 ## Architecture
@@ -283,7 +295,7 @@ This skips the first preprocessing step in every iteration. You can do something
       >>>   for txt_file in txt_files:
       >>>      myNews = ns.Segmentation(txt_file)
 
-This method speeds slightly up the process and it is only adecuate if the file is going to be transformed more than once.
+This method speeds slightly up the process, and it is only adecuate if the file is going to be transformed more than once.
 
 ### Custom Algorithms:
 
