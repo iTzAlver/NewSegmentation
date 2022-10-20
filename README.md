@@ -1,4 +1,5 @@
-![Logo](./tests/logo.png)
+<p align="center">
+    <img src="./tests/logo.png">
 
 # News Segmentation Package - 0.3.2
 
@@ -24,7 +25,7 @@ Cátedra ISDEFE.
 4. Precision, Recall, F1, WD, Pk score evaluation for trees.
 5. ``plot_matrix()`` method for the matrix generated.
 6. ``where_is()`` method for finding pieces of news.
-7. ``gtreader()`` for reading reference trees for evaulation in specific format.
+7. ``gtreader()`` for reading reference trees for evaluation in specific format.
 8. ``Tree`` and ``Leaf`` structures.
 9. Default ``PBMM`` and ``FB-BCM`` algorithms.
 10. Default ``TDM``, ``DBM``, ``SDM`` implemented.
@@ -75,34 +76,35 @@ The whole architecture and algorithms are described in depht in [this paper](htt
 The architecture takes advantage of three main features in order perform news segmentation:
 * Temporal distance: Is the distance (measured in jumps) between different pieces of text inside the VTT file.
 * Spatial distance: Is the distance (measured in slots) between different pieces of text inside the VTT file.
-* Semantical correlation: Is the correlation between the meaning of the sentences of two different pieces of text.
+* Semantic correlation: Is the correlation between the meaning of the sentences of two different pieces of text.
 
-This architecture works with a _correlation matrix_ formed by the semantical correlation between each sentence 
+This architecture works with a _correlation matrix_ formed by the semantic correlation between each sentence 
 in the news broadcast. Each module modifies the correlation matrix in order to apply temporal / spatial features 
 reflected in the matrix. The algorithms shall be able to identify each piece of news inside the matrix.
 Three differentiated modules make up the architecture:
 
 * **Database Transformer (DT)**: Takes the original VTT file and converts it to plain text sentences (TXT) with time jumps specified 
-at the begining of each sentence and a temporal information vector at the end pointing the temporal 
-lenght of each sentence measured in seconds. 
-* **Specific language model (SLM)**: This module takes the blocks of text as input and outputs the semantical correlation 
+at the beginning of each sentence and a temporal information vector at the end pointing the temporal 
+length of each sentence measured in seconds. 
+* **Specific language model (SLM)**: This module takes the blocks of text as input and outputs the semantic correlation 
 between each block of text arranged into a _correlation matrix_.
 * **Temporal Distance Manager (TDM)**: This module takes the temporal jumps as input and modifies the initial correlation matrix
 depending on the temporal jumps.
 * **Spatial Distance Manager (SDM)**: This module implements an algorithm which identifies boundaries between 
 consecutive pieces of text and merges it.
 * **Late correlation manager (LCM)**: This module implements an algorithm which identifies 
-high semantical correlation between separate pieces of text and merges it.
+high semantic correlation between separate pieces of text and merges it.
 
 The user can implement their own algorithms depending on their application.\
 
-![Model architecture](./tests/model.png)
+<p align="center">
+    <img src="./tests/model.png">
 
 The results are stored into a Tree structure with different fields representing different features from 
 the piece of news.
 * **Payload**: defines the whole text of the piece of news, it involves all sentences related to a same piece of news combined into a single piece of text. It can be defined as a text structure.
 * **Embedding**: it is a vector of real numbers which define a semantic representation of the payload. In this model, it is the output of the SLM, output of the specific language model. It can be defined as a high dimensional vector of real numbers. This embedding is stored for computational efficiency reasons, as some models may take long time to compute.
-* **ID**: it is a natural number defining the tree identity, this number must be unique for each tree in the results storage. It can be defined as a natural number. 
+* **ID**: it is a natural number defining the tree identity, this number must be unique for each tree in the results' storage. It can be defined as a natural number. 
 * **Time information**: it is a vector containing the whole temporal length of the piece of news. It can be defined as a real positive number.
 * **Correlation power (CP)**: it is a real number indicating how correlated the sentences of the leafs are within the tree. This number can become very interesting when studying the reliability of algorithms. It can be defined as a real positive number.
 Where M is the size of R1+K and R is, in our architecture, the very last output matrix R1+K. This function does not take into account the main diagonal of the correlation matrix as it does not provide any information about the correlation between sentences. The correlation power is defined on the (0, 1) interval, meaning 0 no correlation between any sentence in the tree and 1 meaning absolute correlation between all the sentences within the tree. This measurement helps to evaluate the reliability of the model.
@@ -132,7 +134,7 @@ You can install the package via pip:
 
     pip install newsegmentation -r requirements.txt
 
-If any error ocurred, try installing the requirements before the installation:
+If any error occurred, try installing the requirements before the installation:
 
     numpy
     matplotlib
@@ -190,7 +192,8 @@ In this demo, we extract the news inside the first 5 minutes of the ``VTT`` file
     Y en los deportes Nadal gana en Australia, Sergio
 
     >>> myNews.plotmtx()
-![matrix](./tests/mtx.png)
+<p align="center">
+   <img src="./tests/mtx.png">
 
 ### Finding news from text:
 
@@ -217,11 +220,12 @@ Then evaluate the news with the reference, use the argument ``evaluate(ref, show
 
     >>> myNews.evaluate(myGt, show=True)
   
-![Evaluation](./tests/evaluation.png)
+<p align="center">
+    <img src="./tests/evaluation.png">
 
 
 ### Save and load trees:
-This package defines a data strcuture called news trees, this format is parsed by the code via parsers:
+This package defines a data structure called news trees, this format is parsed by the code via parsers:
 
     >>> save_file = './testing' # or save_file = './testing.3s'
     >>> myNews.save(save_file)
@@ -262,7 +266,7 @@ stored into the ``cache_file`` if provided. Here is an example of speeding up pr
       6: iteration 13.9 seconds.
 
 If any further speed up is needed. The model reads the original files ``(.VTT)`` and stores it as temporal ``.TXT`` files. If the 
-model is reading continously this files, it is better to process the ``.VTT`` files to ``.TXT`` once, store it, and give the model the ``.TXT`` files instead. 
+model is reading continuously this files, it is better to process the ``.VTT`` files to ``.TXT`` once, store it, and give the model the ``.TXT`` files instead. 
 This skips the first preprocessing step in every iteration. You can do something similar to this:
 
       >>> in_files = ['./1.vtt', './2.vtt', './3.vtt', './4.vtt', './5.vtt']
@@ -272,7 +276,7 @@ This skips the first preprocessing step in every iteration. You can do something
       >>>   for txt_file in txt_files:
       >>>      myNews = ns.Segmentation(txt_file)
 
-This method speeds slightly up the process, and it is only adecuate if the file is going to be transformed more than once.
+This method speeds slightly up the process, and it is only adequate if the file is going to be transformed more than once.
 
 ### Custom Algorithms:
 
@@ -310,15 +314,16 @@ pointing the index of the block in (r) where each pieces of news start.
 word embeddings check the master thesis cited.
 * LCM: Takes as input the SLM function reference (lm), the list of sentences (s), the temporal information vector (t) 
 and the algorithm parameters (param). It returns (rk, sk, tk): the very last correlation matrix (rk), the last blocks of
-text (sk) and their corresponding temporal information (tk). Note that you dont need to manage the embeddings, the SLM works on that job.
+text (sk) and their corresponding temporal information (tk). Note that you don't need to manage the embeddings, the SLM works on that job.
 * DT: Takes as input (path) the path of the VTT file and the requested output path (op) returns the actual output path.
 Note that the architecture creates temporary TXT files for reading the news from the DT.
 ## Performance
 
 Comparing two different algorithms inside the architecture. LGA is a kernel-based algorithm with cellular automation techniques. PBMM algorithm is 
-the default algorithm and has better F1 score performance and reliability. This is tested over a Spanish news boradcast database with 10 files.
+the default algorithm and has better F1 score performance and reliability. This is tested over Spanish news broadcast database with 10 files.
 
-![Performance](./tests/perf.png)
+<p align="center">
+    <img src="./tests/perf.png">
 
 ### Cite as:
 ~~~
