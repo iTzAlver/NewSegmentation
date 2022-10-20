@@ -32,11 +32,11 @@ The user can specify their own algorithm for segmentation, however, there are so
 ## About ##
 
 Author: A.Palomo-Alonso (alberto.palomo@uah.es)\
-Contributors: D.Casillas-PÃ©rez, S.JimÃ©nez-FernÃ¡ndez, A.Portilla-Figueras, S.Salcedo-Sanz.\
-Universidad de AlcalÃ¡.\
-Escuela PolitÃ©cnica Superior.\
-Departamento de TeorÃ­a De la SeÃ±al y Comunicaciones (TDSC).\
-CÃ¡tedra ISDEFE.
+Contributors: D.Casillas-Pérez, S.Jiménez-Fernández, A.Portilla-Figueras, S.Salcedo-Sanz.\
+Universidad de Alcalá.\
+Escuela Politécnica Superior.\
+Departamento de Teoría De la Señal y Comunicaciones (TDSC).\
+Cátedra ISDEFE.
 
 ## What's new?
 
@@ -192,10 +192,10 @@ In this demo, we extract the news inside the first 5 minutes of the ``VTT`` file
 
     Institution:
     ------------------------------------------------------
-    Universidad de AlcalÃ¡.
-    Escuela PolitÃ©cnica Superior.
-    Departamento de TeorÃ­a De la SeÃ±al y Comunicaciones.
-    CÃ¡tedra ISDEFE.
+    Universidad de Alcalá.
+    Escuela Politécnica Superior.
+    Departamento de Teoría De la Señal y Comunicaciones.
+    Cátedra ISDEFE.
     ------------------------------------------------------
     Author: Alberto Palomo Alonso
     ------------------------------------------------------
@@ -203,13 +203,13 @@ In this demo, we extract the news inside the first 5 minutes of the ``VTT`` file
     >>> for pieceOfNews in myNews:
     >>>     print(pieceOfNews)
 
-    No hay descanso. Desde hace mÃ¡s de 24 horas se trabaja sin tregua para encontrar a Julen. El niÃ±o de 2 aÃ±os se cayÃ³ en un pozo en TotalÃ¡n, en MÃ¡laga. Las horas pasan, los equipos de rescate luchan contrarreloj y buscan nuevas opciones en un terreno escarpado y con riesgo de derrumbes bajo tierra. Buenas noches. Arrancamos este Telediario, allÃ­, en el lugar del rescate. Â¿CuÃ¡les son las opciones para encontrar a Julen? Se trabaja en 3 frentes retirar la arena que estÃ¡ taponando el pozo de prospecciÃ³n. Excavar en 2 pozo, y abrir en el lateral de la montaÃ±a
-    El objetivo rescatar al pequeÃ±o. El proyecto de presupuestos llega al Congreso. Son las cuentas con mÃ¡s gasto pÃºblico desde 2010 Destacan mÃ¡s partidas para programas sociales, contra la pobreza infantil o la dependencia, y tambiÃ©n el aumento de inversiones en CataluÃ±a. El gobierno necesita entre otros el apoyo de los independentistas catalanes que por ahora mantienen el NO a los presupuestos, aunque desde el ejecutivo nacional se escuchan voces mÃ¡s optimistas
-    La familia de Laura Sanz Nombela, fallecida en ParÃ­s por una explosiÃ³n de gas espera poder repatriar su cuerpo este prÃ³ximo miÃ©rcoles. Hemos hablado con su padre, que estÃ¡ en Francia junto a su yerno y nos ha contado que se sintieron abandonados en las primeras horas tras el accidente. La guardia civil busca en una zona de grutas volcÃ¡nicas de difÃ­cil acceso el cuerpo de la joven desaparecida en Lanzarote, Romina Celeste. Su marido estÃ¡ detenido en relaciÃ³n con su muerte aunque Ã©l defiende que no la matÃ³, que solo discutieron y que luego se la encontrÃ³ muerta la noche de AÃ±o Nuevo
+    No hay descanso. Desde hace más de 24 horas se trabaja sin tregua para encontrar a Julen. El niño de 2 años se cayó en un pozo en Totalán, en Málaga. Las horas pasan, los equipos de rescate luchan contrarreloj y buscan nuevas opciones en un terreno escarpado y con riesgo de derrumbes bajo tierra. Buenas noches. Arrancamos este Telediario, allí, en el lugar del rescate. ¿Cuáles son las opciones para encontrar a Julen? Se trabaja en 3 frentes retirar la arena que está taponando el pozo de prospección. Excavar en 2 pozo, y abrir en el lateral de la montaña
+    El objetivo rescatar al pequeño. El proyecto de presupuestos llega al Congreso. Son las cuentas con más gasto público desde 2010 Destacan más partidas para programas sociales, contra la pobreza infantil o la dependencia, y también el aumento de inversiones en Cataluña. El gobierno necesita entre otros el apoyo de los independentistas catalanes que por ahora mantienen el NO a los presupuestos, aunque desde el ejecutivo nacional se escuchan voces más optimistas
+    La familia de Laura Sanz Nombela, fallecida en París por una explosión de gas espera poder repatriar su cuerpo este próximo miércoles. Hemos hablado con su padre, que está en Francia junto a su yerno y nos ha contado que se sintieron abandonados en las primeras horas tras el accidente. La guardia civil busca en una zona de grutas volcánicas de difícil acceso el cuerpo de la joven desaparecida en Lanzarote, Romina Celeste. Su marido está detenido en relación con su muerte aunque él defiende que no la mató, que solo discutieron y que luego se la encontró muerta la noche de Año Nuevo
     Dormir poco hace que suba hasta un 27 por ciento el riesgo de enfermedades cardiovasculares
-    Es la conclusiÃ³n de un estudio que ha realizado durante 10 aÃ±os el Centro Nacional para estas dolencias
-    Y una noticia de esta misma tarde de la que estamos muy pendientes: Un tren ha descarrilado esta tarde cerca de Torrijos en Toledo sin causar heridos. HabÃ­a salido de CÃ¡ceres con direcciÃ³n a Madrid. Los 33 pasajeros han sido trasladados a la capital en otro tren. La circulaciÃ³n en la vÃ­a entre Madrid y Extremadura estÃ¡ interrumpida. Renfe ha organizado un transporte alternativo en autobÃºs para los afectados
-    A 15 dÃ­as de la gran gala de los Goya hoy se ha entregado ya el primer premio. La cita es el prÃ³ximo 2 de febrero en Sevilla, pero hoy, aquÃ­ en Madrid, en el Teatro Real gran fiesta de los denominados a los Premios Goya. Solo uno de ellos se llevarÃ¡ hoy su estatuilla. Chicho IbÃ¡Ã±ez Serrador consigue el Premio Goya de Honor por toda una vida dedicada al cine de terror
+    Es la conclusión de un estudio que ha realizado durante 10 años el Centro Nacional para estas dolencias
+    Y una noticia de esta misma tarde de la que estamos muy pendientes: Un tren ha descarrilado esta tarde cerca de Torrijos en Toledo sin causar heridos. Había salido de Cáceres con dirección a Madrid. Los 33 pasajeros han sido trasladados a la capital en otro tren. La circulación en la vía entre Madrid y Extremadura está interrumpida. Renfe ha organizado un transporte alternativo en autobús para los afectados
+    A 15 días de la gran gala de los Goya hoy se ha entregado ya el primer premio. La cita es el próximo 2 de febrero en Sevilla, pero hoy, aquí en Madrid, en el Teatro Real gran fiesta de los denominados a los Premios Goya. Solo uno de ellos se llevará hoy su estatuilla. Chicho Ibáñez Serrador consigue el Premio Goya de Honor por toda una vida dedicada al cine de terror
     Y en los deportes Nadal gana en Australia, Sergio
 
     >>> myNews.plotmtx()
@@ -347,7 +347,7 @@ the default algorithm and has better F1 score performance and reliability. This 
 ~~~
 @inproceedings{newsegmentation,
   title={News Segmentation Architecture for NLP},
-  author={A.Palomo-Alonso, D.Casillas-PÃ©rez, S.JimÃ©nez-FernÃ¡ndez, A.Portilla-Figueras, S.Salcedo-Sanz},
+  author={A.Palomo-Alonso, D.Casillas-Pérez, S.Jiménez-Fernández, A.Portilla-Figueras, S.Salcedo-Sanz},
   booktitle={Master Thesis in Telecommunication Engeneering},
   year={2022}
 }
