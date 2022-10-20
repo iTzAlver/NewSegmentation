@@ -5,15 +5,15 @@
 #                                                           #
 # - x - x - x - x - x - x - x - x - x - x - x - x - x - x - #
 # Import statements:
-from src.newsegmentation._algorithms import fbbcm as default_lcm
-from src.newsegmentation._algorithms import pbmm as default_sdm
-from src.newsegmentation._architecture import NewsSegmentation
-from src.newsegmentation._databasetrans import default_dbt
-from src.newsegmentation._slm import slm as default_slm
-from src.newsegmentation._structures import Leaf
-from src.newsegmentation._structures import TreeStructure
-from src.newsegmentation._gtreader import gtreader
-from src.newsegmentation._dserial import load3s
+from ._algorithms import fbbcm as default_lcm
+from ._algorithms import pbmm as default_sdm
+from ._architecture import NewsSegmentation
+from ._databasetrans import default_dbt
+from ._slm import slm as default_slm
+from ._structures import Leaf
+from ._structures import TreeStructure
+from ._gtreader import gtreader
+from ._dserial import load3s
 
 
 def info():
