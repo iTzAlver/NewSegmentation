@@ -62,6 +62,10 @@ For instance, when testing parameters in the same database the process is around
 ### 0.3.1
 1. Bug fixing with ```.TXT``` input files and cache.
 
+### 0.3.2
+1. Setuptools rework.
+2. Updated performance image.
+3. To continue: Update CITE AS to IEEE ref.
 
 
 ## Architecture
