@@ -10,7 +10,7 @@ with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='src',
+    name='newsegmentation',
     version='0.3.2',
     author='Alberto Palomo Alonso',
     author_email='a.palomo@uah.es',
