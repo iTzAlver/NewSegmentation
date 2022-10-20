@@ -18,11 +18,10 @@ setuptools.setup(
     keywords='deeplearning, ml, api',
     long_description=long_description,
     long_description_content_type='text/markdown',
-    url='https://github.com/iTzAlver/newsegmentation.git',
+    url='https://github.com/iTzAlver/newsegmentation',
     project_urls={
         'Documentation': 'https://github.com/iTzAlver/newsegmentation/blob/master/README.md',
-        'Bug Reports':
-        'Bug Tracker = https://github.com/iTzAlver/newsegmentation/issues',
+        'Bug Reports': 'https://github.com/iTzAlver/newsegmentation/issues',
         'Source Code': 'https://github.com/iTzAlver/newsegmentation.git',
         # 'Funding': '',
         # 'Say Thanks!': '',
@@ -33,13 +32,16 @@ setuptools.setup(
         # see https://pypi.org/classifiers/
         'Development Status :: 5 - Production/Stable',
 
-        'Intended Audience :: Researchers',
+        'Intended Audience :: Science/Research',
         'Topic :: Software Development :: Build Tools',
 
         'Programming Language :: Python :: 3',
         'License :: OSI Approved :: MIT License',
         'Operating System :: OS Independent',
-        'License :: OSI Approved :: Apache License'
+        'Topic :: Text Editors :: Text Processing',
+        'Topic :: Text Processing',
+        'Topic :: Text Processing :: Linguistic',
+        'Topic :: Scientific/Engineering :: Artificial Intelligence',
     ],
     python_requires='>=3.6',
     # install_requires=['Pillow'],

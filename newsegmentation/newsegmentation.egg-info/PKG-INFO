@@ -2,20 +2,23 @@ Metadata-Version: 2.1
 Name: newsegmentation
 Version: 0.3.2
 Summary: Package for news segmentation architecture.
-Home-page: https://github.com/iTzAlver/newsegmentation.git
+Home-page: https://github.com/iTzAlver/newsegmentation
 Author: Alberto Palomo Alonso
 Author-email: a.palomo@uah.es
 Project-URL: Documentation, https://github.com/iTzAlver/newsegmentation/blob/master/README.md
-Project-URL: Bug Reports, Bug Tracker = https://github.com/iTzAlver/newsegmentation/issues
+Project-URL: Bug Reports, https://github.com/iTzAlver/newsegmentation/issues
 Project-URL: Source Code, https://github.com/iTzAlver/newsegmentation.git
 Keywords: deeplearning,ml,api
 Classifier: Development Status :: 5 - Production/Stable
-Classifier: Intended Audience :: Researchers
+Classifier: Intended Audience :: Science/Research
 Classifier: Topic :: Software Development :: Build Tools
 Classifier: Programming Language :: Python :: 3
 Classifier: License :: OSI Approved :: MIT License
 Classifier: Operating System :: OS Independent
-Classifier: License :: OSI Approved :: Apache License
+Classifier: Topic :: Text Editors :: Text Processing
+Classifier: Topic :: Text Processing
+Classifier: Topic :: Text Processing :: Linguistic
+Classifier: Topic :: Scientific/Engineering :: Artificial Intelligence
 Requires-Python: >=3.6
 Description-Content-Type: text/markdown
 Provides-Extra: dev
