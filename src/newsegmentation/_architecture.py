@@ -108,7 +108,19 @@ class NewsSegmentation:
             os.remove(temporalfile)
 
     def __database_transformation(self, path: str):
-        return self._database_transformation(path, temporalfile)
+        try:
+            _db_trans_ = self._database_transformation(path, temporalfile)
+        except Exception as ex:
+            raise RuntimeError(f'DBT: Exception from the "Database transformation" function: {ex}')
+        if _db_trans_:
+            if os.path.exists(_db_trans_):
+                if isinstance(_db_trans_, str):
+                    return self._database_transformation(path, temporalfile)
+                else:
+                    raise ValueError('DBT: The return value of the "Database transformation" is not a string type.')
+            else:
+                raise ValueError('DBT: The return value of the "Database transformation" is not an existing path.')
+        raise ValueError('DBT: The return value of the "Database transformation" function must be a temporary path.')
 
     @staticmethod
     def __reader(path: str):
@@ -144,7 +156,27 @@ class NewsSegmentation:
             if sentence not in self._cache:
                 sx.append(sentence)
         # Get the embeddings.
-        embeddings_ = self._specific_language_model(sx)
+        try:
+            embeddings_ = self._specific_language_model(sx)
+        except Exception as ex:
+            raise RuntimeError(f'SLM: Exception from the "SLM" function: {ex}')
+        if embeddings_:
+            if isinstance(embeddings_, np.array):
+                if len(embeddings_.shape) == 2:
+                    if embeddings_.dtype != np.int_ or embeddings_.dtype != np.float_:
+                        raise ValueError(
+                            f'SLM: The return value of the "SLM" function must be a embedding vector (numpy array) '
+                            f'containing real numbers (int or float) not {embeddings_.dtype}...')
+                else:
+                    raise ValueError(f'SLM: The return value of the "SLM" function must be a embedding vector (numpy '
+                                     f'array) '
+                                     f'with 2 dimensions: (number_of_sentences , embedding_length); not '
+                                     f'{len(embeddings_.shape)} dimensions.')
+            else:
+                raise ValueError(f'SLM: The return value of the "SLM" function must be a embedding vector (numpy array) '
+                                 f'not a {type(embeddings_)}.')
+        else:
+            raise ValueError('SLM: The return value of the "SLM" function must be a embedding vector (numpy array).')
         # Store the embeddings in cache.
         for place, sentence in enumerate(sx):
             self._cache[sentence] = embeddings_[place]
@@ -179,9 +211,41 @@ class NewsSegmentation:
                     if self.parameters['gpa'][0] > 0 else element
                 rp[nr][nc] = element + self.parameters['gpa'][1] * (gpa - element)
         # SDM algorithm:
-        self._directives = self._spatial_manager(rp, self.parameters['sdm'])
-        if not self._directives:
-            self._directives = list(range(1, len(rp)))
+        try:
+            _directives = self._spatial_manager(rp, self.parameters['sdm'])
+        except Exception as ex:
+            raise RuntimeError(f'SDM: Exception raised from the "SDM" function: {ex}')
+        if not _directives:
+            _directives = list(range(1, len(rp)))
+
+        if isinstance(_directives, list):
+            try:
+                _directives.sort()
+                while _directives[0] <= 0:
+                    print(f'SDM: NOTE: popping a wrong element of the directives: {_directives.pop(0)}, because '
+                          f'it is less than 1.')
+                while _directives[-1] > len(rp):
+                    print(f'SDM: NOTE: popping a wrong element of the directives: {_directives.pop(-1)}, because '
+                          f'it is greater than the length of the matrix.')
+                if len(rp) not in _directives:
+                    print(f'SDM: NOTE: adding a missing element of the directives: {len(rp)}, because '
+                          f'it is always required.')
+                    _directives.append(len(rp))
+                if len(set(_directives)) != len(_directives):
+                    raise ValueError(f'SDM: The return value of the "SDM" function must be a directive list, '
+                                     f'with no repeated values inside. The list contains '
+                                     f'{len(_directives) - len(set(_directives))} repeated values. Fix it and retry.')
+            except Exception as ex:
+                raise ValueError(f'SDM: The return value of the "SDM" function must be a directive list, '
+                                 f'it must be sorted, and belong to the (0, len(matrix)] interval, containing the'
+                                 f'length of the matrix in the last place. If the module detects that this is wrong,'
+                                 f'we try to fix it. However, the following exception raised when trying to fix it: '
+                                 f'{ex}.')
+        else:
+            raise ValueError(f'SDM: The return value of the "SDM" function must be a directive list, '
+                             f'not a {type(_directives)}.')
+
+        self._directives = _directives
         # Merge components:
         s2 = []
         t2 = []
@@ -203,8 +267,43 @@ class NewsSegmentation:
         return rp, s2, np.array(t2)
 
     def __later_correlation_manager(self, s: list[str], t: (list[float], np.ndarray)):
-        r, s, t = self._later_correlation_manager(self.__specific_language_model, s, t, self.parameters['lcm'])
-        return np.array(r), s, np.array(t)
+        try:
+            r, s, t = self._later_correlation_manager(self.__specific_language_model, s, t, self.parameters['lcm'])
+        except Exception as ex:
+            raise RuntimeError(f'LCM: An exception raised from the "LCM" function: {ex}')
+        if len(s) == len(t) == len(r):
+            if isinstance(s, list):
+                if isinstance(s[0], str):
+                    if isinstance(t, (list, np.array)):
+                        if isinstance(r, (np.array, list)):
+                            if len(r) == len(r[0]):
+                                try:
+                                    return np.array(r), s, np.array(t)
+                                except Exception as ex:
+                                    raise RuntimeError(f'LCM: An error ocurred in the LCM while converting the output '
+                                                       f'values to np.arrays: {ex}')
+                            else:
+                                raise ValueError(
+                                    f'LCM: The size of the returned matrix must be squared. '
+                                    f'Current shape: {len(r)} x {len(r[0])}')
+                        else:
+                            raise ValueError(
+                                f'LCM: The first return value of the LCM must be a correlation matrix, not {type(r)}.')
+                    else:
+                        raise ValueError(
+                            f'LCM: The third return value of the LCM must be a list or np.array, not '
+                            f'{type(t)}.')
+                else:
+                    raise ValueError(
+                        f'LCM: The second return value of the LCM must be a list of strings, not a list of '
+                        f'{type(s[0])}.')
+            else:
+                raise ValueError(
+                    f'LCM: The second return value of the LCM must be a list, not {type(s)}.')
+        else:
+            raise ValueError(f'LCM: The dimensions of the returned matrix, the sentence vector and the '
+                             f'temporal distance vector must be equal: '
+                             f'matrix:{len(s)} == temporal:{len(t)} == sentence:{len(s)}')
 
     def __treefication(self):
         initial_s = self.s[0]
@@ -254,7 +353,7 @@ class NewsSegmentation:
 
     @staticmethod
     @abstractmethod
-    def _database_transformation(path: str, output: str):
+    def _database_transformation(path: str, output: str) -> str:
         pass
 
     def __repr__(self):
