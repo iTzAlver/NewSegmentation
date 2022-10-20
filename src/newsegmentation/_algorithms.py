@@ -9,7 +9,7 @@ import numpy as np
 
 
 # -----------------------------------------------------------
-def pbmm(r: list, param: tuple):
+def pbmm(r: np.array, param: tuple):
     """
     PBMM algorithm.
     :param r: Correlation matrix.
