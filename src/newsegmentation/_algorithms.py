@@ -9,7 +9,13 @@ import numpy as np
 
 
 # -----------------------------------------------------------
-def pbmm(r, param):
+def pbmm(r: list, param: tuple):
+    """
+    PBMM algorithm.
+    :param r: Correlation matrix.
+    :param param: Parameters of the algorithm: (th, OIM, cbt)
+    :return: List with the segmentation directives.
+    """
     # Parameter check:
     if len(param) == 3:
         th = param[0]
@@ -74,6 +80,14 @@ def pbmm(r, param):
 
 
 def fbbcm(lm, s, t, param):
+    """
+    FB-BCM algorithm.
+    :param lm:
+    :param s: Sentence list.
+    :param t: Temporal information list.
+    :param param: Parameters of the algorithm: (th,)
+    :return: The last correlation matrix, the merged sentences list and temporal information in a tuple.
+    """
     th = param[0]
     popping = [-1]
     this_s = s.copy()
