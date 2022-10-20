@@ -10,7 +10,7 @@ with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
 
 setuptools.setup(
-    name='newsegmentation',
+    name='src',
     version='0.3.2',
     author='Alberto Palomo Alonso',
     author_email='a.palomo@uah.es',
@@ -26,7 +26,7 @@ setuptools.setup(
         # 'Funding': '',
         # 'Say Thanks!': '',
     },
-    package_dir={'': 'newsegmentation'},
+    package_dir={'': 'src'},
     packages=setuptools.find_packages(where='src'),
     classifiers=[
         # see https://pypi.org/classifiers/

@@ -2,7 +2,6 @@ LICENSE
 MANIFEST.in
 README.md
 pyproject.toml
-setup.cfg
 setup.py
 newsegmentation/newsegmentation.egg-info/PKG-INFO
 newsegmentation/newsegmentation.egg-info/SOURCES.txt

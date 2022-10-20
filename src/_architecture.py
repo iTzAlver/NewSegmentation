@@ -517,7 +517,7 @@ class NewsSegmentation:
     def info():
         __text = 'News segmentation package:\n--------------------------------------------\nFAST USAGE:\n' \
                  '--------------------------------------------\nPATH_TO_MY_FILE = < PAHT >\n' \
-                 'import newsegmentation as ns\nnews = ns.NewsSegmentation(PATH_TO_MY_FILE)\n' \
+                 'import src as ns\nnews = ns.NewsSegmentation(PATH_TO_MY_FILE)\n' \
                  'for pon in news:\n' \
                  '\tprint(pon)\n' \
                  '--------------------------------------------\n'
