@@ -1,5 +1,5 @@
 Metadata-Version: 2.1
-Name: newsegmentation
+Name: src
 Version: 0.3.2
 Summary: Package for news segmentation architecture.
 Home-page: https://github.com/iTzAlver/newsegmentation
