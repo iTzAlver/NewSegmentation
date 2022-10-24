@@ -160,7 +160,7 @@ class NewsSegmentation:
             embeddings_ = self._specific_language_model(sx)
         except Exception as ex:
             raise RuntimeError(f'SLM: Exception from the "SLM" function: {ex}')
-        if embeddings_:
+        if embeddings_.any():
             if isinstance(embeddings_, np.array):
                 if len(embeddings_.shape) == 2:
                     if embeddings_.dtype != np.int_ or embeddings_.dtype != np.float_:
