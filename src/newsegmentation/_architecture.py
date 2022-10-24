@@ -149,7 +149,7 @@ class NewsSegmentation:
                 s[index] = sentence[1:]
         return p, s, t
 
-    def __specific_language_model(self, s: list[str]) -> np.array:
+    def __specific_language_model(self, s: list[str]) -> np.ndarray:
         # Check the cache.
         sx = []
         for sentence in s:
@@ -161,7 +161,7 @@ class NewsSegmentation:
         except Exception as ex:
             raise RuntimeError(f'SLM: Exception from the "SLM" function: {ex}')
         if embeddings_.any():
-            if isinstance(embeddings_, np.array):
+            if isinstance(embeddings_, np.ndarray):
                 if len(embeddings_.shape) == 2:
                     if embeddings_.dtype != np.int_ or embeddings_.dtype != np.float_:
                         raise ValueError(
@@ -274,8 +274,8 @@ class NewsSegmentation:
         if len(s) == len(t) == len(r):
             if isinstance(s, list):
                 if isinstance(s[0], str):
-                    if isinstance(t, (list, np.array)):
-                        if isinstance(r, (np.array, list)):
+                    if isinstance(t, (list, np.ndarray)):
+                        if isinstance(r, (np.ndarray, list)):
                             if len(r) == len(r[0]):
                                 try:
                                     return np.array(r), s, np.array(t)
@@ -291,7 +291,7 @@ class NewsSegmentation:
                                 f'LCM: The first return value of the LCM must be a correlation matrix, not {type(r)}.')
                     else:
                         raise ValueError(
-                            f'LCM: The third return value of the LCM must be a list or np.array, not '
+                            f'LCM: The third return value of the LCM must be a list or np.ndarray, not '
                             f'{type(t)}.')
                 else:
                     raise ValueError(
@@ -348,7 +348,7 @@ class NewsSegmentation:
 
     @staticmethod
     @abstractmethod
-    def _specific_language_model(s: list[str]) -> np.array:
+    def _specific_language_model(s: list[str]) -> np.ndarray:
         pass
 
     @staticmethod
