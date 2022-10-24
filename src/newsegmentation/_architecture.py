@@ -163,10 +163,13 @@ class NewsSegmentation:
         if embeddings_.any():
             if isinstance(embeddings_, np.ndarray):
                 if len(embeddings_.shape) == 2:
-                    if embeddings_.dtype != np.int_ or embeddings_.dtype != np.float_:
+                    if embeddings_.dtype != np.float16 or embeddings_.dtype != np.float32 or \
+                            embeddings_.dtype != np.float64 or embeddings_.dtype != np.int8 or \
+                            embeddings_.dtype != np.int16 or embeddings_.dtype != np.int32 or \
+                            embeddings_.dtype != np.int64:
                         raise ValueError(
-                            f'SLM: The return value of the "SLM" function must be a embedding vector (numpy array) '
-                            f'containing real numbers (int or float) not {embeddings_.dtype}...')
+                            f'SLM: The return value of the "SLM" function must be a embedding vector (numpy.ndarray) '
+                            f'containing real numbers (np.intXX or np.floatXX) not {embeddings_.dtype}...')
                 else:
                     raise ValueError(f'SLM: The return value of the "SLM" function must be a embedding vector (numpy '
                                      f'array) '
