@@ -594,7 +594,7 @@ class NewsSegmentation:
             subfigs[2].imshow(mtwd)
             subfigs[2].set_title('Segmentation boundaries.')
             subfigs[2].set_xlabel('Sentence index')
-            subfigs[2].set_yticks(np.array([0, 1]), labels=['Reference', 'Performed'])
+            subfigs[2].set_yticks(np.array([0, 1]), labels=['Performed', 'Reference'])
 
             mtreep = np.zeros((max(len(self.News), len(reference_trees)), len(original), 3), dtype=np.uint8)
             for ns, sentence in enumerate(original):

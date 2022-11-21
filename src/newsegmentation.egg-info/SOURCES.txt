@@ -23,4 +23,6 @@ tests/logo.png
 tests/model.png
 tests/mtx.png
 tests/perf.png
+tests/performance_test.PNG
 tests/tree.png
+tests/wk8.PNG

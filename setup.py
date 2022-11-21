@@ -9,14 +9,25 @@ import setuptools
 with open('README.md', 'r', encoding='utf-8') as fh:
     long_description = fh.read()
 
+
+REQS = [
+    'matplotlib>=3.5.0',
+    'numpy>=1.22.3',
+    'nltk>=3.6.5',
+    'sklearn>=0.0',
+    'sentence-transformers>=2.2.0',
+    'googletrans==4.0.0rc1'
+]
+
 setuptools.setup(
     name='newsegmentation',
-    version='1.1.4',
+    version='1.2.0',
     author='Alberto Palomo Alonso',
     author_email='a.palomo@uah.es',
     description='Package for news segmentation architecture.',
     keywords='deeplearning, ml, api',
     long_description=long_description,
+    install_requires=REQS,
     long_description_content_type='text/markdown',
     url='https://github.com/iTzAlver/newsegmentation',
     project_urls={

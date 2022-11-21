@@ -1,7 +1,7 @@
 <p align="center">
     <img src="./tests/logo.png">
 
-# News Segmentation Package - 1.1.4
+# News Segmentation Package - 1.2.0
 
 This package takes subtitle VTT files (Video Text Track files) and extracts the piece of 
 news from the whole newscast inside the file. News are stored into a Tree structure with useful NLP features inside. 
@@ -78,6 +78,10 @@ For instance, when testing parameters in the same database the process is around
 ### 1.1.0 - 1.1.4
 1. User errors and formatting handled.
 2. Debugging.
+
+### 1.2.0
+1. A bug fix in ``evaluate(<gt>, show=True)`` where the correct segmentation and the performed segmentation switches places
+in the plot representation.
 
 
 ## Architecture
