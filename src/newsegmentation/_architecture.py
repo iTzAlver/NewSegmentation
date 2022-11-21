@@ -7,6 +7,7 @@
 # Import statements:
 import json
 import os
+import logging
 from abc import abstractmethod
 
 import matplotlib.pyplot as plt
@@ -67,7 +68,7 @@ class NewsSegmentation:
                         for key, item in _cache.items():
                             self._cache[key] = np.array(item)
                 except Exception as ex:
-                    print(ex)
+                    logging.error(ex)
                     self._cache_file = False
         # Steps for in the architecture.
         if '.txt' in news_path:
@@ -225,13 +226,13 @@ class NewsSegmentation:
             try:
                 _directives.sort()
                 while _directives[0] <= 0:
-                    print(f'SDM: NOTE: popping a wrong element of the directives: {_directives.pop(0)}, because '
+                    logging.info(f'SDM: popping a wrong element of the directives: {_directives.pop(0)}, because '
                           f'it is less than 1.')
                 while _directives[-1] > len(rp):
-                    print(f'SDM: NOTE: popping a wrong element of the directives: {_directives.pop(-1)}, because '
+                    logging.info(f'SDM: popping a wrong element of the directives: {_directives.pop(-1)}, because '
                           f'it is greater than the length of the matrix.')
                 if len(rp) not in _directives:
-                    print(f'SDM: NOTE: adding a missing element of the directives: {len(rp)}, because '
+                    logging.info(f'SDM: adding a missing element of the directives: {len(rp)}, because '
                           f'it is always required.')
                     _directives.append(len(rp))
                 if len(set(_directives)) != len(_directives):
@@ -391,7 +392,7 @@ class NewsSegmentation:
 
     def plotmtx(self, *args, color='orange'):
         if color not in ['orange', 'black']:
-            print(f'Warning: Color: {color} not defined. Orange chosen.')
+            logging.warning(f'Warning: Color: {color} not defined. Orange chosen.')
             color = 'orange'
         if len(args) == 0:
             args_ = (0, 1, 2, 3)
@@ -650,7 +651,7 @@ class NewsSegmentation:
                         _cache[key] = item.tolist()
                     json.dump(_cache, file)
             except Exception as ex:
-                print(ex)
+                logging.error(ex)
 # - x - x - x - x - x - x - x - x - x - x - x - x - x - x - #
 #                        END OF FILE                        #
 # - x - x - x - x - x - x - x - x - x - x - x - x - x - x - #

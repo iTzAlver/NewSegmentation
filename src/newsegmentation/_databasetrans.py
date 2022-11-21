@@ -6,7 +6,15 @@
 #    Email:     ialver.p@gmail.com                                   #
 #                                                                    #
 # -------------------------------------------------------------------#
-import googletrans
+import logging
+try:
+	import googletrans
+except Exception as _ex:
+	logging.warning(f'Cannot import googletrans library, install it or do not use google translations for the DBT: '
+					f'{_ex}.\nI am remapping googletrans library to a dummy function; this can raise errors if you try'
+					f'to use it.')
+	googletrans = lambda x: x
+
 
 
 def default_dbt(inpath, outpath):
@@ -108,23 +116,23 @@ def _translate(_texts_original, model='google'):
 			dkt.extend(dkt_)
 			_text.append(_text_)
 	except Exception as exc:
-		print(f'{exc}')
+		logging.error(f'{exc}')
 		raise
 
 	if model == 'google':
 		g_translator = googletrans.Translator(service_urls=['translate.google.com'])
 		if _text is None:
-			print('Oops, there was an error translating...')
+			logging.warning('Oops, there was an error translating...')
 		else:
 			try:
 				txt = '\n'.join(_text)
 				retext_ = g_translator.translate(txt, src='es').text
 				retext_ = retext_.replace('​​', '')
 			except Exception as ex:
-				print(f'Traceback: VttReading/__translate: Cannot translate \'{_text}\' '
+				logging.error(f'Traceback: VttReading/__translate: Cannot translate \'{_text}\' '
 				      f'from model {model}; maybe too many requests.\n{ex}')
 	else:
-		print(f'Traceback: VttReading/__translate: No translator model called {model}.')
+		logging.error(f'Traceback: VttReading/__translate: No translator model called {model}.')
 	_retext = capital_restore(retext_, dkt)
 	return _retext.split('\n')
 

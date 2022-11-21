@@ -7,6 +7,7 @@
 #                                                                    #
 # -------------------------------------------------------------------#
 import numpy as np
+import logging
 from ._structures import TreeStructure
 
 
@@ -36,7 +37,7 @@ def save3s(object_array, path):
 def load3s(path):
     the_trees = []
     if not len(path) > 0:
-        print('Invalid path file for loading trees...')
+        logging.error('Invalid path file for loading trees...')
         return []
     if path[-3:] != '.3s':
         thepath = f'{path}.3s'

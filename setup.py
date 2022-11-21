@@ -21,7 +21,7 @@ REQS = [
 
 setuptools.setup(
     name='newsegmentation',
-    version='1.2.0',
+    version='1.2.1',
     author='Alberto Palomo Alonso',
     author_email='a.palomo@uah.es',
     description='Package for news segmentation architecture.',
