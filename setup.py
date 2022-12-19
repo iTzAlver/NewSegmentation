@@ -13,6 +13,7 @@ with open('README.md', 'r', encoding='utf-8') as fh:
 REQS = [
     'matplotlib>=3.5.0',
     'numpy>=1.22.3',
+    'pytorch'
     'nltk>=3.6.5',
     'sklearn>=0.0',
     'sentence-transformers>=2.2.0',
@@ -21,7 +22,7 @@ REQS = [
 
 setuptools.setup(
     name='newsegmentation',
-    version='1.2.1',
+    version='1.4.0',
     author='Alberto Palomo Alonso',
     author_email='a.palomo@uah.es',
     description='Package for news segmentation architecture.',

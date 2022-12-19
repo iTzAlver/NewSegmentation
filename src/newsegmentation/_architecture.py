@@ -153,34 +153,38 @@ class NewsSegmentation:
     def __specific_language_model(self, s: list[str]) -> np.ndarray:
         # Check the cache.
         sx = []
+        all_cached = True
         for sentence in s:
             if sentence not in self._cache:
                 sx.append(sentence)
+                all_cached=False
         # Get the embeddings.
         try:
             embeddings_ = self._specific_language_model(sx)
         except Exception as ex:
             raise RuntimeError(f'SLM: Exception from the "SLM" function: {ex}')
-        if embeddings_.any():
-            if isinstance(embeddings_, np.ndarray):
-                if len(embeddings_.shape) == 2:
-                    if embeddings_.dtype != np.float16 and embeddings_.dtype != np.float32 and \
-                            embeddings_.dtype != np.float64 and embeddings_.dtype != np.int8 and \
-                            embeddings_.dtype != np.int16 and embeddings_.dtype != np.int32 and \
-                            embeddings_.dtype != np.int64:
-                        raise ValueError(
-                            f'SLM: The return value of the "SLM" function must be a embedding vector (numpy.ndarray) '
-                            f'containing real numbers (np.intXX or np.floatXX) not {embeddings_.dtype}...')
+        if not all_cached:
+            if embeddings_.any():
+                if isinstance(embeddings_, np.ndarray):
+                    if len(embeddings_.shape) == 2:
+                        if embeddings_.dtype != np.float16 and embeddings_.dtype != np.float32 and \
+                                embeddings_.dtype != np.float64 and embeddings_.dtype != np.int8 and \
+                                embeddings_.dtype != np.int16 and embeddings_.dtype != np.int32 and \
+                                embeddings_.dtype != np.int64:
+                            raise ValueError(
+                                f'SLM: The return value of the "SLM" function must be a embedding vector '
+                                f'(numpy.ndarray) containing real numbers (np.intXX or np.floatXX) not '
+                                f'{embeddings_.dtype}...')
+                    else:
+                        raise ValueError(f'SLM: The return value of the "SLM" function must be a embedding vector '
+                                         f'(numpy array) with 2 dimensions: (number_of_sentences , embedding_length); '
+                                         f'not {len(embeddings_.shape)} dimensions.')
                 else:
-                    raise ValueError(f'SLM: The return value of the "SLM" function must be a embedding vector (numpy '
-                                     f'array) '
-                                     f'with 2 dimensions: (number_of_sentences , embedding_length); not '
-                                     f'{len(embeddings_.shape)} dimensions.')
+                    raise ValueError(f'SLM: The return value of the "SLM" function must be a embedding vector '
+                                     f'(numpy array) not a {type(embeddings_)}.')
             else:
-                raise ValueError(f'SLM: The return value of the "SLM" function must be a embedding vector (numpy array) '
-                                 f'not a {type(embeddings_)}.')
-        else:
-            raise ValueError('SLM: The return value of the "SLM" function must be a embedding vector (numpy array).')
+                raise ValueError('SLM: The return value of the "SLM" function must be a embedding vector '
+                                 '(numpy array).')
         # Store the embeddings in cache.
         for place, sentence in enumerate(sx):
             self._cache[sentence] = embeddings_[place]
@@ -338,7 +342,7 @@ class NewsSegmentation:
                 if nc > nr:
                     cp += element ** 2
         cp /= len(cembedding) * (len(cembedding) - 1) if len(cembedding) > 1 else 1
-        return np.float(2 * cp)
+        return np.float32(2 * cp)
 
     @staticmethod
     @abstractmethod
