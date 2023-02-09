@@ -85,12 +85,12 @@ class TreeStructure:
                 else:
                     raise ValueError(f"Error while building a TreeStructure: invalid {key} parameter.")
             elif 'ime' in key:
-                if isinstance(item, float) or isinstance(item, int):
+                if isinstance(item, float) or isinstance(item, int) or isinstance(item, np.float32):
                     self.Time = item
                 else:
                     raise ValueError(f"Error while building a TreeStructure: invalid {key} parameter.")
             elif 'CP' in key:
-                if isinstance(item, int) or isinstance(item, float):
+                if isinstance(item, int) or isinstance(item, float) or isinstance(item, np.float32):
                     self.CP = item
                 else:
                     raise ValueError(f"Error while building a TreeStructure: invalid {key} parameter.")

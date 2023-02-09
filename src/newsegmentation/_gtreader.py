@@ -20,14 +20,18 @@ def gtreader(path) -> list:
 		for nline, line in enumerate(file):
 			if line[0] == '%':
 				pl = '. '.join(payload_)
+				if pl[-1] == ' ':
+					pl = pl[:-1]
 				leafs = [[ids, payload, []] for ids, payload in zip(id_, payload_)]
 				trees.append(TreeStructure(*tuple(leafs), payload=pl, ID=len(trees)))
 				payload_ = []
 				id_ = []
 			else:
 				id_.append(nline)
-				line_ = line if line[0] != '$' else line[1:]
-				payload_.append(line_.strip('\n'))
+				line_ = line.strip('\n') if line[0] != '$' else line[1:].strip('\n')
+				if line_[-1] == ' ':
+					line_ = line_[:-1]
+				payload_.append(line_)
 	return trees
 # -------------------------------------------------------------------#
 #           E   N   D          O   F           F   I   L   E         #

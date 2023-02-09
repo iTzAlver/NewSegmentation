@@ -148,6 +148,8 @@ class NewsSegmentation:
                 s[index] = sentence[:-1]
             if sentence[0] == ' ':
                 s[index] = sentence[1:]
+        if not t:
+            t = np.array([1. for _ in s])
         return p, s, t
 
     def __specific_language_model(self, s: list[str]) -> np.ndarray:
@@ -157,7 +159,7 @@ class NewsSegmentation:
         for sentence in s:
             if sentence not in self._cache:
                 sx.append(sentence)
-                all_cached=False
+                all_cached = False
         # Get the embeddings.
         try:
             embeddings_ = self._specific_language_model(sx)
@@ -231,13 +233,13 @@ class NewsSegmentation:
                 _directives.sort()
                 while _directives[0] <= 0:
                     logging.info(f'SDM: popping a wrong element of the directives: {_directives.pop(0)}, because '
-                          f'it is less than 1.')
+                                 f'it is less than 1.')
                 while _directives[-1] > len(rp):
                     logging.info(f'SDM: popping a wrong element of the directives: {_directives.pop(-1)}, because '
-                          f'it is greater than the length of the matrix.')
+                                 f'it is greater than the length of the matrix.')
                 if len(rp) not in _directives:
                     logging.info(f'SDM: adding a missing element of the directives: {len(rp)}, because '
-                          f'it is always required.')
+                                 f'it is always required.')
                     _directives.append(len(rp))
                 if len(set(_directives)) != len(_directives):
                     raise ValueError(f'SDM: The return value of the "SDM" function must be a directive list, '

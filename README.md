@@ -1,7 +1,7 @@
 <p align="center">
     <img src="./tests/logo.png">
 
-# News Segmentation Package - 1.4.0
+# News Segmentation Package - 1.4.5
 
 This package takes subtitle VTT files (Video Text Track files) and extracts the piece of 
 news from the whole newscast inside the file. News are stored into a Tree structure with useful NLP features inside. 
@@ -87,6 +87,8 @@ in the plot representation.
 1. Included logging library instead of print logging information.
 2. Try - except clause for googletrans module. Now you can omit it.
 
+### 1.4.5
+1. Upated numpy incoherence update. Bug fixing.
 
 ## Architecture
 
