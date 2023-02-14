@@ -1,7 +1,7 @@
 <p align="center">
-    <img src="./tests/logo.png">
+    <img src="multimedia/logo.png">
 
-# News Segmentation Package - 1.4.5
+# News Segmentation Package - 1.5.0
 
 This package takes subtitle VTT files (Video Text Track files) and extracts the piece of 
 news from the whole newscast inside the file. News are stored into a Tree structure with useful NLP features inside. 
@@ -93,6 +93,8 @@ in the plot representation.
 ### 1.5.0
 1. Bug fixing. Added a new parameter to the constructor of the ``Segmentation`` class.
 2. Added wikipedia experiments in the ``/experiments`` folder.
+3. Added unit tests in the ``/tests`` folder.
+
 
 ## Architecture
 
@@ -123,7 +125,7 @@ high semantic correlation between separate pieces of text and merges it.
 The user can implement their own algorithms depending on their application.\
 
 <p align="center">
-    <img src="./tests/model.png">
+    <img src="multimedia/model.png">
 
 The results are stored into a Tree structure with different fields representing different features from 
 the piece of news.
@@ -135,7 +137,7 @@ the piece of news.
 Where M is the size of R1+K and R is, in our architecture, the very last output matrix R1+K. This function does not take into account the main diagonal of the correlation matrix as it does not provide any information about the correlation between sentences. The correlation power is defined on the (0, 1) interval, meaning 0 no correlation between any sentence in the tree and 1 meaning absolute correlation between all the sentences within the tree. This measurement helps to evaluate the reliability of the model.
 
 <p align="center">
-    <img src="./tests/eqp.png">
+    <img src="multimedia/eqp.png">
 
 
 
@@ -144,7 +146,7 @@ Where M is the size of R1+K and R is, in our architecture, the very last output 
 * **Leafs**: this structure stores information about the initial state of the model. Each leaf stores a unique _ID_ value and a _Payload_ value containing the minimum text size element considered; in this architecture this element is a sentence, but a single word or any group of words could be also considered.
 
 <p align="center">
-    <img src="./tests/tree.png">
+    <img src="multimedia/tree.png">
 
 
 ## Usage
@@ -218,7 +220,7 @@ In this demo, we extract the news inside the first 5 minutes of the ``VTT`` file
 
     >>> myNews.plotmtx()
 <p align="center">
-   <img src="./tests/mtx.png">
+   <img src="multimedia/mtx.png">
 
 ### Finding news from text:
 
@@ -246,7 +248,7 @@ Then evaluate the news with the reference, use the argument ``evaluate(ref, show
     >>> myNews.evaluate(myGt, show=True)
   
 <p align="center">
-    <img src="./tests/evaluation.png">
+    <img src="multimedia/evaluation.png">
 
 
 ### Save and load trees:
@@ -348,7 +350,7 @@ Comparing two different algorithms inside the architecture. LGA is a kernel-base
 the default algorithm and has better F1 score performance and reliability. This is tested over Spanish news broadcast database with 10 files.
 
 <p align="center">
-    <img src="./tests/perf.png">
+    <img src="multimedia/perf.png">
 
 ### Cite as:
 ~~~
