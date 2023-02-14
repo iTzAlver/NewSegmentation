@@ -1,0 +1,57 @@
+$Býkov-Láryšov es una localidad del distrito de Bruntál en la región de Moravia-Silesia, República Checa, con una población estimada a principio del año 2018 de 160 habitantes
+Se encuentra ubicada al oeste de la región, en los Sudetes orientales, cerca de la frontera con Polonia y la región de Olomouc
+Cornelia Catangă (Buzău, 9 de marzo de 1958 – Bucarest, 26 de marzo de 2021) fue una cantante y violinista rumana
+Catangă nació en el Distrito de Buzău en 1958
+En 1979 cantó durante un breve periodo de tiempo con la artista rumana Romica Puceanu y en 1985 tuvo su primera presentación como solista en el Polyvalent Hall
+En 1989 publicó su primer álbum de estudio, apoyada por la orquesta de Ion Onoriu
+Durante parte de su carrera cantó con su esposo Aurel Pădureanu
+La cantante falleció el 26 de marzo de 2021 a los sesenta y tres años en Bucarest, víctima del COVID-19
+Fue enterrada un día después en el Cementerio de Ghencea
+La bandera del Estado de Nuevo Hampshire es la bandera utilizada en Nuevo Hampshire, Estados Unidos
+Consiste en el escudo del estado centrado y color azul de fondo
+Fue adoptada en 1909, y fue cambiada una vez en 1931, cuando el estado modificó su escudo
+Antes de 1909, el Estado estuvo representado por varias banderas de regimiento
+El escudo representa la fragata USS Raleigh y está rodeado por una corona de laurel con nueve estrellas
+El Raleigh fue una de las primeras 13 naves que el Congreso Continental autorizó para su construcción en 1776, en Portsmouth
+El diseño de la bandera fue clasificado como una de los 10 peores entre los Estados Unidos, las provincias canadienses, y las naciones seleccionadas en una encuesta realizada a los miembros de Asociación Vexológica de América del Norte
+Alguno de los funcionarios de éste estado ha sugerido sustituir el escudo para poner al Viejo de la Montaña en el centro de la bandera, en memoria de su destrucción en 2003, pero no se han tomado decisiones oficiales sobre la propuesta
+El concepto de programación modular es adoptado por la mayoría de los lenguajes modernos, con la notable excepción de C, y C++ antes de la versión C++20
+Estos dos lenguajes usan un preprocesador para incluir encabezados con declaraciones, una técnica que data de la década del 1970, hoy superada universalmente por el uso de módulos
+C++20 incorpora módulos, introduciendo por primera vez una alternativa real a la inclusión de encabezados y que permite evitar totalmente el uso del preprocesador
+C y C++ organizan un proyecto en varios archivos de código, más notablemente de estos dos tipos: Los encabezados no se envían al compilador directamente, sino que son incluidos en archivos de código con la instrucción #include de preprocesador como ésta: El preprocesador copia y pega el contenido del archivo encabezado en el código justo antes de compilar (el resultado del preprocesamiento se compila pero no se guarda)
+Algunas consecuencias indeseadas: Los módulos incorporados en C++20 presentan una alternativa a la inclusión de encabezados que evita las consecuencias indeseadas mencionadas y mejora la expresividad y modularidad del código
+Si bien los módulos resuelven estos problemas, no fueron planteados como una mera alternativa a la inclusión de encabezado sino como una nueva capacidad de C++
+Consecuencia de esto, los módulos no pueden desplazar completamente la inclusión de encabezados existentes, aunque sí pueden evitarla completamente para nuevas bibliotecas que aprovechen la nueva capacidad de módulos
+En C++20 un módulo es una unidad de traducción con dos particulares relevantes: A continuación se ilustra el código de un módulo elemental: Un archivo de código que requiera utilizar las definiciones exportadas de un módulo sólo tiene que indicarlo con la instrucción: Cabe notar que, a diferencia de #include, esta forma de import no necesita indicar un nombre de archivo, sino un nombre de símbolo, específicamente un nombre de módulo, que es una entidad nueva en el lenguaje
+El linker buscará ese nombre entre las unidades de traducción
+Esta forma de programación, muy natural para los programadores, requiere cambios profundos en el compilador, que debe ser capaz de averiguar símbolos ajenos al archivo de código que está compilando
+Para mayor flexibilidad C++20 permite que un módulo se desarrolle en varios archivos de código, a los que denomina fragmentos
+$La línea N9 de la Empresa Municipal de Transportes de Madrid es una línea nocturna que conecta la Plaza de Cibeles con el Ensanche de Vallecas
+La línea, al igual que todas las líneas nocturnas de Madrid de la red de búhos, empieza su camino en la plaza de Cibeles y sus horarios de salida de la misma coinciden con los de otras líneas para permitir el transbordo, yendo al Ensanche de Vallecas, donde realiza un circuito neutralizado
+También da servicio a Santa Eugenia
+La línea es una mezcla entre las líneas 10 (entre Cibeles y Mariano de Cavia) y 145 (entre Conde de Casal y Ensanche de Vallecas), si bien también hace una pequeña parte del recorrido de las líneas 54, 58 y 142
+El trayecto es igual al de ida salvo 3 expeciones: Mapa zonal de la estación de metro de Las Suertes con los recorridos de las líneas de autobuses, entre las que aparece la línea N9
+El Centro Nacional de Protección de Infraestructuras Críticas (CNPIC) de España es el órgano del Ministerio del Interior, adscrito a la Dirección General de Coordinación y Estudios, responsable del impulso, la coordinación y supervisión de todas las actividades que tiene encomendadas la Secretaría de Estado de Seguridad (SES) en relación con la protección de las infraestructuras críticas
+En concreto, el CNPIC es la pieza clave del Sistema de Protección de Infraestructuras Críticas, pues asiste a su máximo responsable —el Secretario de Estado de Seguridad—, ejecuta y mantiene actualizado el Plan Nacional de Protección de las Infraestructuras Críticas, se encarga de determinar el nivel de criticidad de cada una de las infraestructuras consideradas críticas así como de recopilar, analizar, integrar y valorar toda la información que pueda afectar a dichas infraestructuras
+Los primeros pasos hacia la creación de este órgano y el establecimiento de unas políticas claras para la protección de elementos sensibles del Estado fue dado en 2004 a nivel europeo, con una comunicación de la Comisión Europea que contenía propuestas para mejorar la prevención, preparación y respuesta de Europa frente a atentados terroristas que la amenazaban
+En el caso de España, el 7 de mayo de 2007 aprobó el primer Plan Nacional de Protección de las Infraestructuras Críticas y el 2 de noviembre de 2007 se aprobó en Consejo de Ministros las bases del Sistema de Protección de Infraestructuras Críticas
+Tras estos pasos, las Cortes Generales aprobaron la Ley 8/2011, de 28 de abril, por la que se establecen medidas para la protección de las infraestructuras críticas, que creaba el órgano y fue desarrollado reglamentariamente el mes siguiente
+$La Ruta Provincial 227 es una carretera de 121 km de la Provincia de Buenos Aires que une la ciudad de Necochea con el norte de Napaleofú
+Hasta 1988 fue una ruta de jurisdicción nacional
+El estado nacional había pavimentado el tramo entre Puerto Quequén y Lobería, con una longitud de 49 km
+El gobernador de la provincia de Buenos Aires propuso a la Nación en 1977 que la provincia pagara el dinero que demandaba las obras de pavimentación de los 67,92 km para completar la carretera
+Luego de la firma del convenio con la Dirección Nacional de Vialidad el 8 de febrero de 1978, el ente provincial licitó, el 23 de marzo de 1979, los dos tramos en los que se dividió la obra
+En ambos sectores el ancho de la carpeta asfáltica era de 7,40 m
+El primer sector, de 42 km de extensión entre Napaleofú y el paraje El Bonete, fue inaugurado el 16 de marzo de 1981
+Las autoridades provinciales inauguraron la obra completa el 12 de octubre de 1981
+Mediante el Decreto Nacional 1595 del año 1979, se prescribió que este camino pasara a jurisdicción provincial
+La Provincia de Buenos Aires se hizo cargo del mismo en 1988, cambiando su denominación a Ruta Provincial 227
+Las ciudades y pueblos por los que pasa esta ruta de sur a norte son los siguientes (los pueblos con menos de 5.000 habitantes figuran en itálica)
+$Denis Roux (Montreuil, 5 de noviembre de 1961) fue un ciclista francés, profesional entre 1984 y 1992, cuyo mayor éxito deportivo lo logró en la Vuelta a España, donde conseguiría una victoria de etapa en la edición de 1990
+Tras su retirada siguió vinculado al ciclismo al desempeñar entre 1993 y 1996, el cargo de entrenador en la Federación Canadiense de Ciclismo y, entre 1997 y 2008 el cargo de director deportivo del equipo ciclista francés Crédit Agricole
+1983 1985 1986 1989 1990 
+$Incluso permite manejar el nivel de visibilidad de los símbolos exportados como globales o privados, según sean accesibles por todos o solamente por otros fragmentos del mismo módulo
+La instrucción import tiene una sintaxis alternativa similar a #include: En este caso import no nombra un módulo sino un archivo de encabezados, y lo procesa como tal
+A priori parece una mera alternativa sintáctica al clásico #include, pero opera de manera diferente y más eficiente, y no es totalmente compatible: todos los headers estándar se han reescrito para ser importables, pero la manera de escribir headers propios para que sean importables depende del compilador
+No cabe esperar que la inclusión de encabezados de bibliotecas existentes sea reemplazada por módulos, pero sí se espera que nuevas bibliotecas se escriban en términos de módulos en lugar de encabezados, y que la directiva #include vaya perdiendo protagonismo aunque no se vislumbra que se vuelva obsoleta
+Recorrido: 121 km (kilómetro 0-121) 

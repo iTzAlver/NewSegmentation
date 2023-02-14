@@ -1,0 +1,49 @@
+$Ocaña, la memoria del sol es un documental sobre José Pérez Ocaña, su vida y su obra, rodado por Juan José Moreno y estrenado en 2010
+Este documental biográfico tiene como objetivo la recuperación de la memoria de Ocaña como figura rupturista, como persona que luchaba contra las normas impuestas, que está más allá del artista que fue, visto así desde una perspectiva más universalista
+La grabación evoca diversas facetas del personaje, desde las pinturas de devoción popular a la virgen hasta la defensa y celebración de su propio cuerpo y del derecho propio y ajeno a existir y ser en libertad
+La historia, en este caso, no solo la cuenta el propio Ocaña (del que se incluyen fragmentos que había aparecido en Ocaña, retrato intermitente), sino que gran parte de la atención recae en cómo quienes compartieron su vida con él (familia y amigos) cuentan su historia y construyen la imagen del Ocaña que conocieron
+Se dan cita en el rodaje tanto Cantillana, su pueblo sevillano que lo vio crecer, como Barcelona, ciudad a la que huyó para poder llevar una vida mejor, más libre
+Las imágenes que recogen las procesiones de su pueblo ayudan a entender mejor todo aquello que Ocaña planteaba en torno a la religión en el documental de Ventura Pons, quien también sale en este proyecto para hablar de su relación con el pintor sevillano y del motivo de su película
+Nezumia umbracincta es una especie de pez de la familia Macrouridae en el orden de los Gadiformes
+Los machos pueden llegar alcanzar los 38,5 cm de longitud total
+Es un pez de aguas profundas que vive entre 400-1.600 m de profundidad
+Se encuentra en el África Austral
+$La conductividad (o conductancia específica) de una solución de electrolito es una medida de su capacidad para conducir la electricidad
+La unidad SI de conductividad es el siemens por metro (S/m)
+Las medidas de conductividad se utilizan de forma rutinaria en muchas aplicaciones industriales y medioambientales como un modo rápido, barato y fiable de medir el contenido iónico en una solución
+Por ejemplo, la medida de la conductividad del producto es un modo típico de supervisar instantánea y continuamente la tendencia del funcionamiento de los sistemas de purificación del agua
+En muchos casos, la conductividad está directamente vinculada a la cantidad de sólidos totales disueltos (TDS)
+El agua desionizada de alta calidad tiene una conductividad de 5,5 μS/m, el agua potable típica en el rango de 5-50 mS/m, mientras que el agua de mar cerca de 5 S/m
+(es decir, la conductividad del agua de mar es un millón de veces mayor que el agua desionizada)
+La conductividad se determina habitualmente midiendo la resistencia AC de una solución entre dos electrodos
+Las soluciones diluidas siguen las leyes de Kohlrausch de la dependencia de la concentración y la aditividad de las concentraciones iónicas
+Onsager dio una explicación teórica de la ley de Kohlrausch por extensión de la ecuación de Debye–Hückel
+La unidad SI de conductividad es el S/m y, sin otro calificativo, se refiere a 25 °C (temperatura estándar)
+A menudo, en la industria se utiliza la tradicional unidad de μS/cm
+Alejandro Sánchez Speitzer (Culiacán, Sinaloa; 21 de enero de 1995) es un actor mexicano
+Comenzó su carrera desde muy pequeño
+Es conocido por su trabajo en la telenovela mexicana Aventuras en el tiempo, junto a Belinda y Christopher Uckermann
+Es hermano del también actor Carlos Speitzer
+Desde corta edad se muda a la Ciudad de México en donde empieza su carrera actoral trabajando en telenovelas y series mexicanas
+La Nava-Tarazona fue una estación de ferrocarril situada en el municipio español de Tarazona, en la provincia de Zaragoza, comunidad autónoma de Aragón
+Perteneciente a la línea Soria-Castejón, las instalaciones estuvieron en servicio entre 1941 y 1996
+La estación estaba situada en el punto kilométrico 66,4 de la línea férrea de ancho ibérico Soria-Castejón, a una altitud de 742 metros
+La construcción de la línea Soria-Castejón estaba prevista en el Plan de Ferrocarriles de Urgente Construcción que promulgó la dictadura de Primo de Rivera
+La construcción del trazado se inició en 1927, si bien los trabajos se alargaron debido a las vicisitudes de la época
+La línea fue inaugurada oficialmente en septiembre de 1941
+Las infraestructuras pasaron a integrarse en RENFE, creada ese mismo año como consecuencia de la nacionalización de la red ferroviaria de ancho ibérico
+La estación de La Nava-Tarazona, que en un principio dispuso de varias vías de servicio, eventualmente acabaría siendo rebajada a la categoría de apeadero
+En 1996 se cerró a la circulación el trazado comprendido entre Soria y Castejón debido al escaso tráfico que movía, quedando sin servicio las infraestructuras
+En la actualidad las instalaciones están abandonadas y no prestan servicio
+Los valores de μS/cm son más altos que los de μS/m en un factor de 100
+De vez en cuando se encuentra en la escala de los instrumentos una unidad denominada como "CE" (conductividad eléctrica): 1 CE = 1 S/cm
+A veces se encuentra la llamada mho (recíproco de ohmio): 1 mho/m = 1 S/m
+La célula estándar comúnmente utilizada tiene un ancho de 1 cm, y así, para agua muy pura en equilibrio con el aire podría tener una resistencia de aproximadamente 106 ohm, conocido como Megaohmio
+El agua ultra pura podría alcanzar 10 megaohms o más
+Así, en el pasado, se utilizó el Megaohmio-cm (= μS/cm), a veces abreviado a "Megaohmio"
+A veces, una conductividad se da sólo en "microSiemens" (omitiendo el término de distancia en la unidad)
+Si bien esto es un error, a menudo se puede suponer que es igual a la tradicional μS/cm
+La típica conversión de la conductividad a los sólidos disueltos totales se realiza suponiendo que el sólido es cloruro de sodio: 1 μS/cm es equivalente entonces a cerca de 0,6 mg de NaCl por kg de agua
+La conductividad molar tiene en el SI la unidad S.m².mol−1
+Las publicaciones más antiguas utilizan la unidad Ω−1.cm².mol−1
+La conductividad eléctrica de una solución de un electrolito se mide determinando la resistencia de la solución entre dos electrodos planos o cilíndricos separados por una distancia fija

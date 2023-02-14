@@ -1,0 +1,90 @@
+$El Dansk Algoritmisk Sekvens Kalkulator (DASK) fue el primer computador en Dinamarca
+Fue encargado en 1955, diseñado y construido por Regnecentralen, primera empresa informática danesa, fundada el 12 de octubre de 1955, y comenzó a funcionar en septiembre de 1957
+La empresa Regnecentralen estuvo a punto de no permitir el nombre, ya que DASK significa en danés "bofetada"
+Sin embargo, al final fue permitido porque se ajustaba al modelo del computador sueco BESK, que proporcionó la arquitectura inicial al DASK. DASK remonta sus orígenes a 1947 y a un objetivo fijado por la Academia de Ciencias Aplicadas, que iba a seguir el desarrollo de los dispositivos de la computación moderna
+La financiación inicial se obtuvo a través del Ministerio de Defensa (Dinamarca), ya que éstos habían dado a los Militares Daneses una subvención por el plan de Mariscal para máquinas de cifrado, para las cuales los militares no vieron ninguna necesidad inmediata
+Originalmente fue concebido para ser una copia del BESK, pero el rápido avance en el campo permitió realizar mejoras durante el desarrollo, de tal manera que al final no fue una copia de BESK. El DASK era un diseño único que tuvo lugar en una villa
+La máquina llegó a ser tan grande que la planta tuvo que ser reforzada para soportar su peso de 3,5 toneladas métricas
+DASK es notable por ser el sujetode de una de las primeras implementaciones de ALGOL, denominado DASK ALGOL, que contó con Jørn Jensen y Peter Naur entre sus colaboradores
+El DASK era una máquina de tubo de vacío basada en el diseño BESK sueco
+Como se describió en 1956, contenía 2.500 tubos de vacío, 1.500 elementos de estado sólido, y requiere una fuente de alimentación trifásica de al menos 15 kW. El almacenamiento rápido fue de 1024 palabras de 40 bits de memoria de núcleo magnético (5μs tiempo de ciclo), directamente direccionable como 1024 palabras completas o 2048 medias palabras
+Los Jardines del parlamento es un pequeño parque en el centro de Windhoek, Namibia
+Está situado entre el Tintenpalast (el edificio del Parlamento de Namibia) y la Iglesia de Cristo
+Se diseñó en 1932 y se llamó originalmente los jardines del Tintenpalast, adoptando su nombre actual después de la independencia de Namibia en 1990
+Los Jardines del Parlamento contienen el primer monumento de Namibia después de la independencia: una estatua de bronce del jefe Herero Hosea Kutako
+Otros dos nacionalistas namibios también son honrados con estatuas de bronce en los jardines: Hendrik Samuel Witbooi y Theophilus Hamutumbangela
+Las tres estatuas flanquean los escalones de la entrada principal del Parlamento
+Los jardines solían ser una plantación de olivos, y todavía incluyen un olivar
+También contienen un boliche verde forrado con buganvillas junto con una casa club de techo de paja
+Dos veces al mes los jardines albergan el "Teatro en el Parque", dirigido por el Colegio de las Artes
+En 2016, la apertura del Parlamento de Namibia se celebró en los Jardines del Parlamento debido a la limitación de espacio en el Tintenpalast
+Debido a un cambio en la Constitución en 2014, el número de parlamentarios ha aumentado significativamente, por lo que las sesiones conjuntas tienen que celebrarse en otro lugar
+Rough Guides describe los Jardines del Parlamento como "encantadores, sombreados... definitivamente merecen un paseo"
+Preston Lea Spruance III es un compositor, productor y músico estadounidense
+Más conocido por haber sido el guitarrista de Mr
+Bungle
+También es multiinstrumentista, como el teclado, órgano, bajo, sintetizador, y una gran cantidad de instrumentos del medio oriente
+En estos momentos se encuentra componiendo y grabando un nuevo álbum de Secret Chiefs 3
+Trey Spruance empezó a tocar guitarra a los 13 años, cuando se vio forzado a elegir entre eso o diseñar videojuegos, o dedicarse al karate
+También dijo que era muy nerd cuando niño, lo que ocasionaba problemas en la escuela
+En una entrevista, cuando le preguntaron sobre la letra de "Everyone I Went to High School With Is Dead", dijo que era una historia real, que el, Dunn y Patton iban en el mismo instituto, y que podían preguntarle a cualquiera
+Sus primera influencia fue Devo, de hecho dijo que fue ese grupo el que lo impulso a tocar la guitarra, y que después había llegado Slayer
+En el instituto forma Mr.Bungle con Mike Patton y Trevor Dunn
+Luego de la primera gira de Mr.Bungle forma "Faxed Head", un grupo de Death metal, usando el apodo de "Neck Head".Se unió a la famosa banda de su compañero Patton, Faith No More, con el que grabó King for a Day..
+Fool for a Lifetime, pero el cual se fue por motivos desconocidos
+Después de Disco Volante forma Secret Chiefs 3, con la cual hasta la actualidad no ha parado de trabajar
+Spies Like Us (titulada Espías como nosotros en España y Misión recontraespionaje en Hispanoamérica) es una película cómica estadounidense de 1985 dirigida por John Landis y protagonizada por Chevy Chase, Dan Aykroyd, Steve Forrest y Donna Dixon
+El argumento se centra en dos espías novatos de la DIA a los que envían a la Unión Soviética
+Austin Millbarge (Dan Aykroyd) es un hacker que trabaja para el Pentágono y que aspira a dejar su trabajo para convertirse en agente secreto
+Por otro lado, Emmet Fritz-Hume (Chevy Chase) es un "listillo" e hijo de un diplomático que no se toma en serio los exámenes del servicio internacional
+Cuando los dos se conocen, este último no duda en hacer todo tipo de tretas para aprobar un examen, mientras Millbarge se ve obligado a asistir a la prueba justo cuando su supervisor le comunica que su contrato está a punto de terminar
+Al urgir la necesidad de alistar algunos agentes como señuelos para que sirvan de distracción al enemigo y así un equipo más apto sea capaz de terminar la misión con éxito, la DIA decide alistarles en el servicio operativo en el extranjero a pesar de no haber sido entrenados
+Su misión principal (sin definir) empieza en la región soviética de Asia Central mientras que los profesionales son enviados al verdadero objetivo: destruir un lanzamisiles SS-50ICBM. Cuando Millbarge y Fitz-Hume se pierden y consiguen escapar de las tropas enemigas y otros peligros, se encuentran a Karen Boyer (Donna Dixon), la única superviviente del equipo principal que tenía como misión distraer a estos dos
+Mientras cruzan la frontera con Tayikistán por la Cordillera del Pamir, descubren el lanzamisiles y fingen pasarse por extraterrestres para confundir a los rusos y dispararles con armas tranquilizantes
+Una vez se acercan al objetivo reciben órdenes por parte del DIA para lanzar el misil al espacio hasta que estos descubren que el objetivo del misil tiene como objetivo un punto específico de Estados Unidos
+Al creer que están ante un futuro conflicto bélico, tanto los estadounidenses como los soviéticos deciden acostarse al pensar que el mundo ha llegado a su fin
+De pronto, el comandante en jefe de operaciones (Steve Forrest), desde el búnker admite ser el responsable del lanzamiento del misil para hacer responsables a los estadounidenses, razón por la cual han sido enviados sin saberlo, pero cuando este trata de neutralizar el misil, falla y sigue dirigiéndose a territorio estadounidense con la consecuente respuesta de una guerra termonuclear
+De vuelta al territorio soviético, tanto los estadounidenses como los soviéticos colaboran para desviar la trayectoria del misil gracias al conocimiento informático de Millbarge con el que consiguen averiar el mecanismo de la bomba y estalla en el espacio
+La Sagrada Familia es una película chilena de 2006
+Dirigida por Sebastián Lelio, protagonizada por Patricia López, Néstor Cantillana y Sergio Hernández y con la música de Javiera y Los Imposibles
+Una familia de arquitectos viaja a su casa en la playa a pasar la Semana Santa
+Una de las grandes expectativas del viaje es que los padres conocerán a Sofía, la nueva novia de su hijo, quién tiene una relación competitiva y enfermiza con su padre
+Pero la chica es algo más audaz de lo que ellos esperaban y, después que la madre deba volver a Santiago por una emergencia, el padre, el hijo y la novia vivirán dos días muy distintos al tranquilo fin de semana que esperaban
+$La Selección de Fútbol de Argentina ha jugado en total 1069 partidos, según registros oficiales, 1068, para la FIFA y 1028 para la AFA
+El primer partido lo disputó el 16 de mayo de 1901 en Montevideo contra Uruguay, en la victoria por 3-2
+Este también fue el primer encuentro para la Selección de Uruguay y fue el comienzo del hoy denominado Clásico del Río de la Plata, el cual se ha repetido en otras 197 ocasiones
+Entre estos encuentros, se destacan las obtenciones de tres campeonatos mundiales, en Argentina 1978, México 1986 y Catar 2022
+Además, ganó la Copa Confederaciones 1992, la Copa Artemio Franchi en 1993, la Copa de Campeones Conmebol-UEFA 2022 y la Copa América, la cual ha conquistado en 15 ocasiones
+En cuanto a jugadores, Lionel Messi ostenta el récord de goles para la Selección Argentina, con 98 tantos y de presencias con 172
+De los 1051 partidos, ha disputado 348 encuentros en Argentina, de los cuales 265 han sido en Buenos Aires, la mayoría disputados en el Estadio Monumental
+Actualizado al último partido jugado el 18 de diciembre de 2022 (Datos según FIFA)
+Nota: No incluye juegos panamericanos ni competencias de selecciones juveniles u otras competencias de fútbol, como fútbol playa o fútbol sala
+Todos los partidos oficiales para la FIFA. Nota: Los cotejos están numerados de acuerdo a los registros de AFA, los encuentros sin numerar, no son oficiales para la AFA, aunque fueron oficializados por FIFA. No incluye juegos panamericanos ni competencias de selecciones juveniles u otras competencias de fútbol, como fútbol playa, fútbol sala o fútbol femenino
+$Esto se complementó con un adicional almacén de respaldo de tambor magnético de 8.192 palabras de 3000 rpm
+Una palabra completa almacenaba números de 40 bits en dos instrucciones de 20 bits
+Además de los dos acumuladores, el DASK tenía tres registros de índice, lo que podría ser utilizado para modificar la dirección de la mayoría de las instrucciones
+Una palabra de instrucción consistía en 11 bits para una dirección, 2 bits para indexar la selección del registro, y 7 bits para el código de operación y sus modificadores
+Las operaciones incluían la adición y la sustracción (56 µs), multiplicación y división (364 µs), desplazamiento binario y conjunción bit a bit
+Los periféricos incluían una cinta de papel de 5 bits (400 cps de tiempo de lectura) y un teletipo (12 cps), la cinta magnética y otros periféricos se añadieron más tarde
+$Los jardines son "particularmente populares a la hora del almuerzo y los fines de semana, cuando los estudiantes se tumban en el césped mirando sus libros o a los demás"
+También son un "lugar popular para un picnic a la hora del almuerzo"
+$Es creído que el motivo por el cual Mr.Bungle se disolvió, fue por la mala relación que este tenía con Patton
+Spruance ha colaborado con muchos músicos importantes, como John Zorn
+Faxed Head esta inactiva desde el lanzamiento de su último disco "Chiropractic", no obstante se espera el lanzamiento de un DVD "Faxed Head: Live in Japan", probablemente a finales del 2008
+En el año 2011 volvió a tocar con Faith No More para el Festival Maquinaria en Santiago de Chile
+Spruance es dueño de su propio sello, el cual se creó a fines de los 90s, "por una gran necesidad", esto debido a que amarillo recors, les había cerrado las puertas no había otro sello que lo pudiera acoger con su música. entre algunos músicos se encuentran Estradasphere, Secret Chiefs 3, entre otros
+Mr
+Bungle Faith No More Secret Chiefs 3 Faxed Head John Zorn Como productor: 
+Inmediatamente, los jefes del DIA son arrestados por un grupo de Rangers acusados de conspirar contra el gobierno
+Por su parte, Millbarge, Fitz-Hume y Boyer se hacen cargo de la negociación del desarme nuclear mediante un juego-mezcla del Risk y Trivial Pursuit contra sus amigos soviéticos
+La película fue un éxito de taquilla
+Recaudó $ 8,614,039 en el fin de semana inaugural de Estados Unidos y $ 60,088,980 en Estados Unidos y Canadá frente a un presupuesto de $ 22 millones
+La película recaudó $ 17.2 millones en el extranjero para una recaudación mundial de $ 77.3 millones
+El crítico del Washington Post, Paul Attanasio, calificó a Spies Like Us como "una comedia con exactamente una risa, y aquellos de ustedes entregados a la búsqueda de huevos de Pascua pueden sentirse libres de intentar encontrarla"
+El crítico de Chicago Reader, Dave Kehr, criticó el desarrollo del personaje de la película, diciendo que "Landis nunca se molesta en dar cuenta de la amistad que surge espontáneamente entre estos dos tipos antipáticos, pero nunca se molesta en dar cuenta de nada en esta progresión suelta de Riffs de Abbott y Costello reciclados " 
+La crítica del New York Times, Janet Maslin, escribió: "Las estrellas siempre son afables y vale la pena verlas incluso cuando hacen muy poco, pero es doloroso quedarse sentado mientras el guión pierde fuerza"
+La revista Variety opinó en una reseña del personal: "Spies no es muy divertido
+Aunque Chase y Aykroyd brindan momentos, el guión general apenas aborda el espionaje excéntrico y la locura nuclear, sin nada nuevo que agregar"
+TV Guide publicó una reseña del personal que decía: "La dirección de Landis es indulgente, por decir lo menos, con grandes paisajes, grandes accidentes, gran hardware y grandes bromas llenando la pantalla
+Lo que olvida es el desarrollo del personaje, ese factor de suma importancia eso debe existir para que la comedia funcione bien "
+David Parkinson, que escribe para Radio Times, sintió que "Dan Aykroyd y Chevy Chase simplemente no logran cuajar, y hay poca diversión una vez que se agotan las bulliciosas bromas de la escuela de entrenamiento"

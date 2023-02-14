@@ -1,0 +1,76 @@
+1821 La Feria Chiapas se realiza anualmente en Tuxtla Gutiérrez, Chiapas, México
+Es una de las más concurridas del país, tras la de Texcoco y Aguascalientes
+Año con año, la Feria ofrece actividades tradicionales como las corridas de toro, charrería, eventos deportivos y culturales; venta de artesanías, exposiciones agrícolas, industriales, ganaderas, gastronómicas, comerciales, turísticas y empresariales; además de juegos mecánicos y eventos artísticos
+Es considerada por la ASONAFE como la "Feria más Joven de México"
+El 23 de mayo de 1828, el licenciado José Alberto Lara, gobernador constitucional del Estado, promulga el decreto que instituye oficialmente la celebración de una feria anual en la Villa de San Marcos Tuxtla, misma que empezó a celebrarse del 6 al 14 de diciembre de cada año
+El H. Ayuntamiento de Tuxtla, que presidía don Juan María Balboa, aprovechó la inclusión del 12 de diciembre dentro de la feria anual para designar como titular de la feria a “Nuestra Señora de la Virgen Santísima
+Bajo la advocación de Guadalupe, patrona de nuestra confederación”
+De 1828 a 1834 los comerciantes no pagaron ningún tipo de impuestos, pues la feria se había creado con el fin de fomentar la economía de la Villa
+El 27 de julio de 1829, Tuxtla fue elevada a la categoría de ciudad y en 1848 se le agregó el apellido Gutiérrez, en memoria de don Joaquín Miguel Gutiérrez, héroe federalista de Chiapas
+De 1828 hasta 1930, aproximadamente, se celebró tradicionalmente la feria de Guadalupe en el parque central de Tuxtla
+Dubois es un pueblo ubicado en el condado de Fremont en el estado estadounidense de Wyoming
+En el año 2010 tenía una población de 971 habitantes y una densidad poblacional de 142.79 personas por km²
+Se encuentra a la orilla del curso alto del río Bighorn, afluente del Yellowstone que, a su vez, es afluente del Misuri
+Dubois se encuentra ubicado en las coordenadas 43°32′11.69″N 109°38′38.4″ / 43.5365806, -109.644000
+Según la Oficina del Censo, la localidad tiene un área total de 6,8 km² (2,6 mi²), de la cual 6,7 km² (2,6 mi²) es tierra y 0 km² (0 mi²) (0.38%) es agua
+El siguiente diagrama muestra a las localidades en un radio de 72 kilómetros (44,7 mi) de Dubois
+En el 2000 la renta per cápita promedia del hogar era de $28.194, y el ingreso promedio para una familia era de $28.125
+El ingreso per cápita para la localidad era de $15.657
+En 2000 los hombres tenían un ingreso per cápita de $28.125 contra $16.719 para las mujeres
+Alrededor del 12.0% de la población estaba bajo el umbral de pobreza nacional
+$Knodus gamma es una especie de peces de la familia Characidae en el orden de los Characiformes
+Los machos pueden llegar alcanzar los 4,8 cm de longitud total
+Vive en zonas de clima tropical
+Se encuentran en Sudamérica: cuenca del río Amazonas en Ecuador
+La concentración de corriente (también llamado efecto de la concentración de corriente, o CCE (Current crowding Effect) es una distribución no homogénea de la densidad de corriente a través de un conductor o semiconductor, especialmente en las proximidades de los contactos y en los uniones PN
+La concentración de corriente es uno de los factores limitantes de la eficiencia de los diodos emisores de luz
+Materiales con una baja movilidad de portadores de carga, como por ejemplo el Arseniuro de galio-aluminio, son especialmente propensos a fenómenos concentración de corriente
+Es un mecanismo de pérdida dominante en algunos, donde las densidades de corriente, especialmente alrededor de los contactos del lado P, alcanzan la parte de las características de emisión con menor eficiencia de brillo/corriente
+La concentración de corriente puede provocar un sobrecalentamiento localizado y formación de puntos calientes termales que, en casos catastróficos, conducen a la fuga térmica
+La distribución no homogénea de la corriente también agrava los efectos de la electromigración y la formación de vacíos (véase, por ejemplo, el efecto Kirkendall)
+La formación de vacíos provoca la no homogeneidad localizada de la densidad de corriente, y el aumento de la resistencia alrededor del vacío causa un aumento de la temperatura localizada adicional, que a su vez acelera la formación del vacío
+A la inversa, la disminución localizada de la densidad de corriente puede conducir a la deposición de los átomos migrados, lo que lleva a una mayor disminución de la densidad de corriente y una mayor deposición del material y la formación de montículos, lo que puede causar cortocircuitos
+En los transistores bipolares grandes la resistencia de la capa base influye en la distribución de la densidad de corriente a través de la región base, especialmente en el lado del emisor
+La concentración de corriente se produce especialmente en las zonas de menor resistencia localizada, o en áreas donde se concentra la intensidad de campo (por ejemplo en los bordes de capas)
+$Notelaea longifolia es un arbusto o árbol muy pequeño en el este Australia
+Crece dentro o adyacente a bosques lluviosos desde el Parque nacional Mimosa Rocks (37° S) hasta el poblado de Bamaga (11° S) en el extremo norte de Queensland
+Nombres comunes incluyen Olivo-Mock grande (Large Mock-olive) u Olivo Mock de hojas grandes (Long-leaved-olive)
+Es una planta ornamental atractiva
+Usualmente es un arbusto de 3 metros de alto
+Pero ocasionalmente puede ser ocasionalmente grande, de hasta 9 metros de alto y un diámetro en le tronco de 30 cm
+El tronco es con frecuencia torcido, la corona es ancha y densa
+La corteza café grisácea es escamosa, agrietada y dura
+Las ramillas tienen lenticelas pálidas, si no café pálidas y delgadas
+Las hojas son variables en tamaño y forma
+Algunas estrechas lanceoladas, otras lanceoladas y algunas de una forma ovada
+$Transact-SQL (T-SQL) es una extensión al SQL de Microsoft y Sybase
+SQL, que frecuentemente se dice ser un Lenguaje de Búsquedas Estructurado (por sus siglas en inglés), es un lenguaje de cómputo estandarizado, desarrollado originalmente por IBM para realizar búsquedas, alterar y definir bases de datos relacionales utilizando sentencias declarativas
+T-SQL expande el estándar de SQL para incluir programación procedimental, variables locales, varias funciones de soporte para procesamiento de strings, procesamiento de fechas, matemáticas, etc, y cambios a las sentencias DELETE y UPDATE. Estas características adicionales hacen de T-SQL un lenguaje que cumple con las características de un autómata de Turing
+TRANSACT-SQL es un lenguaje muy potente que nos permite definir casi cualquier tarea que queramos efectuar sobre la base de datos; incluye características propias de cualquier lenguaje de programación, características que nos permiten definir la lógica necesaria para el tratamiento de la información: Sin embargo no nos permite: Debido a estas restricciones se emplea generalmente para crear procedimientos almacenados, triggers y funciones de usuario
+Puede ser utilizado como cualquier SQL como lenguaje embebido en aplicaciones desarrolladas en otros lenguajes de programación como Visual Basic, C, Java, etc
+Y por supuesto los lenguajes incluidos en la plataforma .NET. También lo podremos ejecutar directamente de manera interactiva, por ejemplo desde el editor de consultas de SSMS (SQL Server Management Studio)
+O Transact-SQL fornece as seguintes instruções para declarar e definir variáveis locais: DECLARE, SET e SELECT. A partir do SQL Server 2005, a Microsoft introduziu a lógica TRY CATCH adicional para oferecer suporte ao comportamento do tipo de exceção
+Esse comportamento permite que os desenvolvedores simplifiquem seu código e deixem de fora a verificação @@ERROR após cada instrução de execução SQL
+Franco Testa (Padua, 7 de febrero de 1938) es un deportista italiano que compitió en ciclismo en la modalidad de pista, especialista en la prueba de persecución por equipos
+Participó en dos Juegos Olímpicos de Verano, en la disciplina de persecución por equipos, obteniendo en total dos medallas, oro en Roma 1960 (junto con Luigi Arienti, Mario Vallotto y Marino Vigna) y plata en Tokio 1964 (con Vincenzo Mantovani, Carlo Rancati y Luigi Roncaglia)
+Ganó una medalla de plata en el Campeonato Mundial de Ciclismo en Pista de 1964, en la misma disciplina
+$De San Cristóbal de las Casas venían las “coletas” a establecer sus puestos de vendimias
+En un principio, los puestos eran de paredes de cañamaíz con tejas de barro y algunas con techos de tejamanil
+Asimismo, venían comerciantes de la ciudad de Chiapa de Corzo, Tonalá y Juchitán
+Pero las garitas que más llamaban a atención a chicos y grandes eran las de las “coletas”, por su extensa variedad de dulces y juguetes de madera
+En los puestos de las “coletas” se vendían los dulces de huevos mejido, duraznos prensados, nuégados, gaznates, cocadas, caramelos, trompadas, higos, chimbos, chilacayotes, jocotes curtidos, confites y otros dulces que ya no se fabrican
+Se expendían, además, la riquísima cervecita dulce, la morita, la mistela y el ponche con marquesote
+En las mismas garitas se vendían infinidad de juguetes de madera que tuvieron su origen en la época de la colonia: muñecas de trapo, “trepatemicos, maromeros, la cajita con culebra que pica, los boxeadores, los trapecistas, trompos, baleros, guitarras, yoyos, caballitos, cofrecitos, carritos, palomas… En la feria Guadalupana, que se celebra en el parque central, se divertían los niños en el “palo ensebado”, “la trampa del diablo”, “los comales tiznados” (llenos de pesos cero siete veinte que los niños sacaban con la boca), “toritos”, carrera de encostalados, carrera en bicicleta o a caballo
+"¡Quien no recuerda el paseo de la madrugada! (“El rompimiento”, rompimiento del alba) que organizaban, después del baile de velación, los presidentes de las juntas de festejos de la virgen de Guadalupe: A partir de las 4 de la mañana los guadalupanos hacían recorridos por todos los barrios y colonias de la ciudad, llevando en un camión de redilas la marimba que amenizaba el recorrido en medio de vivas y de quemas de cohetes y de triques; paseo matinal que terminaba, con una gran tamalada, en la plazuela de la capilla." En 1913, en el marco de la celebración de la feria de Guadalupe, se convocó al concurso de composición de la letra del Himno a Chiapas, resultando triunfadora la compuesta por el poeta José Emilio Grajales
+El 20 de noviembre de 1934, la mayoría de los santos y otras pinturas fueron quemados en el parque central con motivo de la campaña anticlerical que realizó el gobierno de aquel entonces. la Feria Regional del Estado de Chiapas Durante el gobierno del ingeniero Francisco J. Grajales se principiaron a celebrar las ferias de tipo oficial, mismas que fueron transformadas en la época del gobierno de don Juan Sabines Gutiérrez, quien la convirtió en una feria comercial, agrícola, ganadera y artesanal, al celebrarse la “Primera Gran Feria Regional de Chiapas, 1980”, hoy conocida como Feria Chiapas, que se celebra año con año en las instalaciones de la Chacona, en el ejido de Plan de Ayala
+$De 3 a 16 cm de largo y 1 a 6 cm de ancho
+A veces con una punta prominente, o a veces roma
+Las hojas gradualmente se estrechan en el extremo del tallo
+Verde oscuro en el haz, más opacas en el envés, rígidas y secas al tacto
+Los tallos de la hoja ausentas o de hasta 8 mm de largo
+Las hojas son venosas y no tan bien determinadas como en Notelaea venosa
+Las flores amarillas pálidas se forman entre abril y octubre en racimos en las axilas de la hoja
+Los racimos miden 2 cm de largo
+El fruto madura desde noviembre a marzo
+Siendo una drupa carnosa oscura azulada o negra de 10 a 16 mm de largo con una sola semilla puntiaguda o en forma de huevo, de 8 a 12 mm de largo
+La regeneración de la semilla fresca es lenta, tomando hasta un año

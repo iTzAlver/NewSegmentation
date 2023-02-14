@@ -1,0 +1,34 @@
+$Se denomina luz colimada a la luz cuyos rayos son paralelos entre sí, lo que se puede lograr de diferentes formas, siendo la más sencilla hacerla incidir en un espejo cóncavo desde una fuente situada en el foco
+Se suele decir que la luz colimada está enfocada en el infinito
+Se dice que un haz de luz está colimado si la divergencia del vector de Poynting correspondiente es nula
+El flujo de la energía es unidireccional, de modo que cada rayo del haz puede considerarse paralelo a cualquier otro
+Dentro de ciertas aproximaciones acerca de la fuente primordial puede obtenerse un haz colimado mediante un sistema de dos lentes: una primera lente hace converger todos los rayos en la focal de la segunda, de forma que finalmente salen paralelos
+El láser suele estar colimado, debido a que se genera en el interior de una cámara entre dos espejos de este tipo, además de ser coherente
+La luz de las estrellas, incluido el Sol, puede considerarse colimada (para casi cualquier propósito) debido a que están a distancias muy grandes
+Un espejo parabólico de precisión llevará los rayos paralelos a un foco en un único punto
+Los espejos esféricos son más sencillos de construir que los parabólicos y suelen utilizarse para producir luz más o menos colimada
+Para producir luz colimada útil, la fuente de luz debe acercarse a un punto; es decir, debe ser pequeña con respecto al sistema óptico, como la imagen que forma un espejo de una estrella
+La desventaja es que, puesto que la luminosidad de la mayoría de fuentes es baja, dicho sistema óptico no puede producir mucha energía óptica
+El láser es una excepción importante a esta regla general
+$Hohenwart es un municipio situado en el distrito de Pfaffenhofen, en el estado federado de Baviera (Alemania), con una población a finales de 2016 de unos 4578 habitantes
+Se encuentra ubicado en el centro del estado, en la región de Alta Baviera, cerca de la orilla sur del Río Danubio
+Este anexo contiene una lista de los elementos incluidos en el Catálogo General del Patrimonio Histórico Andaluz en la Comarca Metropolitana de Sevilla, Sevilla (España)
+Esta página se regenera automáticamente
+Cualquier cambio manual desaparecerá en la siguiente actualización
+Los elementos listados figuran en el Catálogo General del Patrimonio Histórico Andaluz
+La información de cada elemento tiene origen en la Guía Digital del Patrimonio Cultural de Andalucía que publica el Instituto Andaluz del Patrimonio Histórico
+El nivel de protección de dichos bienes varía desde el nulo (el bien está catalogado pero sin protección) hasta el máximo: Bien de Interés Cultural (BIC)
+Los bienes catalogados pueden ser patrimonio inmueble, mueble, inmaterial o paisaje cultural
+Formar parte del catálogo no siempre implica protección patrimonial legal
+Esta lista es actualizada periódicamente por un bot usando los contenidos de Wikidata, por lo que cualquier cambio manual se perderá
+                                                    Plantilla:Wikidata list end Plantilla:Control de autoridades 
+Véase el texto
+Las ranas de las Seychelles (Sooglossidae) son un clado de anuros endémicos de las islas Seychelles
+Hasta el 2006 se pensaba que incluía a los géneros Nesomantis y Sooglossus, pero estudios posteriores determinaron que se trataba del mismo género
+Así mismo, la rana púrpura (Nasikabatrachus sahyadrensis) fue en un principio asignada al grupo monotípico Nasikabatrachidae, siendo incluida por Frost et al (2006) dentro de Sooglossidae y finalmente situada una vez más en su propio grupo
+Todas las especies son anfibios terrestres de unos 4 centímetros de longitud
+Algunas de sus características son inusuales entre los neobatracios, como el amplexo inguinal, más primitivo que el habitual
+Además, depositan sus huevos en tierra húmeda, no en el agua
+Otras especies no pasan por la etapa de renacuajo, saliendo del huevo como pequeñas ranas completas, mientras que otras transportan los renacuajos en su lomo hasta su metamorfosis
+Se conocen los siguientes: Sechellophryne gardineri Sechellophryne pipilodryas Sooglossus sechellensis Sooglossus thomasseti Cladograma basado en Van Der Meijden et al
+(2007)
