@@ -90,6 +90,10 @@ in the plot representation.
 ### 1.4.5
 1. Upated numpy incoherence update. Bug fixing.
 
+### 1.5.0
+1. Bug fixing. Added a new parameter to the constructor of the ``Segmentation`` class.
+2. Added wikipedia experiments in the ``/experiments`` folder.
+
 ## Architecture
 
 The whole architecture and algorithms are described in depht in [this paper](https://???) or in 
