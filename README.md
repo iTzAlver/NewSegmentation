@@ -1,6 +1,19 @@
 <p align="center">
     <img src="multimedia/logo.png">
 
+<p align="center">
+    <a href="https://github.com/iTzAlver/newsegmentation/blob/master/LICENSE">
+        <img src="https://img.shields.io/github/license/iTzAlver/newsegmentation?color=purple&style=plastic" /></a>
+    <a href="https://github.com/iTzAlver/newsegmentation/tree/master/test">
+        <img src="https://img.shields.io/badge/tests-passed-green?color=green&style=plastic" /></a>
+    <a href="https://github.com/iTzAlver/newsegmentation/blob/master/requirements.txt">
+        <img src="https://img.shields.io/badge/requirements-pypi-red?color=red&style=plastic" /></a>
+    <a href="https://github.com/iTzAlver/newsegmentation/blob/master/README.md">
+        <img src="https://img.shields.io/badge/doc-Not available-green?color=red&style=plastic" /></a>
+    <a href="https://github.com/iTzAlver/newsegmentation/releases/tag/1.5.0-release">
+        <img src="https://img.shields.io/badge/release-1.5.0-white?color=white&style=plastic" /></a>
+</p>
+
 # News Segmentation Package - 1.5.0
 
 This package takes subtitle VTT files (Video Text Track files) and extracts the piece of 
@@ -9,12 +22,12 @@ The user can specify their own algorithm for segmentation, however, there are so
 
 ## About ##
 
-Author: A.Palomo-Alonso (alberto.palomo@uah.es)\
-Contributors: D.Casillas-Pérez, S.Jiménez-Fernández, A.Portilla-Figueras, S.Salcedo-Sanz.\
-Universidad de Alcalá.\
-Escuela Politécnica Superior.\
-Departamento de Teoría De la Señal y Comunicaciones (TDSC).\
-Cátedra ISDEFE.
+      Author: A.Palomo-Alonso (a.palomo@uah.es)
+      Contributors: D.Casillas-Pérez, S.Jiménez-Fernández, A.Portilla-Figueras, S.Salcedo-Sanz.
+      Universidad de Alcalá.
+      Escuela Politécnica Superior.
+      Departamento de Teoría De la Señal y Comunicaciones (TDSC).
+      Cátedra ISDEFE.
 
 ## What's new?
 
