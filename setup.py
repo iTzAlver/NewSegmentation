@@ -22,7 +22,7 @@ REQS = [
 
 setuptools.setup(
     name='newsegmentation',
-    version='1.4.6',
+    version='1.5.0',
     author='Alberto Palomo Alonso',
     author_email='a.palomo@uah.es',
     description='Package for news segmentation architecture.',
@@ -55,7 +55,7 @@ setuptools.setup(
         'Topic :: Text Processing :: Linguistic',
         'Topic :: Scientific/Engineering :: Artificial Intelligence',
     ],
-    python_requires='>=3.6',
+    python_requires='>=3.8',
     # install_requires=['Pillow'],
     extras_require={
         'dev': ['check-manifest'],

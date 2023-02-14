@@ -32,7 +32,8 @@ class NewsSegmentation:
                  lcm: tuple = (0.614,),
                  ref: int = 0,
                  cache_file: str = '',
-                 dump: bool = True):
+                 dump: bool = True,
+                 transformation_path: str = ''):
         """
         Virtual class: 3 methods must be overriden
         :param tdm: Penalty factor (betta) for Temporal Distance Manager
@@ -41,6 +42,11 @@ class NewsSegmentation:
                  [1]: Weight for GPA.
             [1]: SDM algorithm parameters.
         :param lcm: Algorithm parameters for Later Correlation Manager.
+        :param ref: Reference news for the evaluation.
+
+        :param cache_file: Path to the cache file.
+        :param dump: Dump the cache file. If True, it dumps the new information into the cache file.
+        :param transformation_path: Path to the database transformation file. If it is not provided, it will be removed.
         """
         # Parameters for each module of the architecture.
         self.parameters = {"betta_tdm": tdm, "gpa": gpa, "sdm": sdm, "lcm": lcm}
@@ -106,7 +112,10 @@ class NewsSegmentation:
             self._dump_cache()
 
         if os.path.exists(temporalfile):
-            os.remove(temporalfile)
+            if transformation_path == '':
+                os.remove(temporalfile)
+            else:
+                os.rename(temporalfile, transformation_path)
 
     def __database_transformation(self, path: str):
         try:
@@ -116,7 +125,7 @@ class NewsSegmentation:
         if _db_trans_:
             if os.path.exists(_db_trans_):
                 if isinstance(_db_trans_, str):
-                    return self._database_transformation(path, temporalfile)
+                    return _db_trans_
                 else:
                     raise ValueError('DBT: The return value of the "Database transformation" is not a string type.')
             else:
@@ -148,8 +157,13 @@ class NewsSegmentation:
                 s[index] = sentence[:-1]
             if sentence[0] == ' ':
                 s[index] = sentence[1:]
-        if not t:
+
+        # Check t vectors if they are empty.
+        if isinstance(t, list):
+            t = np.array(t)
+        if t.size == 0:
             t = np.array([1. for _ in s])
+
         return p, s, t
 
     def __specific_language_model(self, s: list[str]) -> np.ndarray:

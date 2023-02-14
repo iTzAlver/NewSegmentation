@@ -348,10 +348,10 @@ the default algorithm and has better F1 score performance and reliability. This 
 
 ### Cite as:
 ~~~
-@inproceedings{newsegmentation,
-  title={News Segmentation Architecture for NLP},
+@<not_available_yet>{palomo2022alonso,
+  title={A Flexible Architecture using Temporal, Spatial and Semantic
+Correlation-based algorithms for Story Segmentation of Broadcast News},
   author={A.Palomo-Alonso, D.Casillas-Pérez, S.Jiménez-Fernández, A.Portilla-Figueras, S.Salcedo-Sanz},
-  booktitle={Master Thesis in Telecommunication Engeneering},
   year={2022}
 }
 ~~~
