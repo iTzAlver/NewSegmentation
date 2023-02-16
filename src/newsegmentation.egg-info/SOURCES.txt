@@ -17,12 +17,3 @@ src/newsegmentation.egg-info/SOURCES.txt
 src/newsegmentation.egg-info/dependency_links.txt
 src/newsegmentation.egg-info/requires.txt
 src/newsegmentation.egg-info/top_level.txt
-tests/eqp.png
-tests/evaluation.png
-tests/logo.png
-tests/model.png
-tests/mtx.png
-tests/perf.png
-tests/performance_test.PNG
-tests/tree.png
-tests/wk8.PNG

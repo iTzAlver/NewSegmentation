@@ -14,7 +14,7 @@
         <img src="https://img.shields.io/badge/release-1.5.0-white?color=white&style=plastic" /></a>
 </p>
 
-# News Segmentation Package - 1.5.0
+# News Segmentation Package - 1.5.1
 
 This package takes subtitle VTT files (Video Text Track files) and extracts the piece of 
 news from the whole newscast inside the file. News are stored into a Tree structure with useful NLP features inside. 
